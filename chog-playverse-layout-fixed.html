@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10140f">
+<title>Chog Playverse — Chog Genesis Arcade</title>
+<style>
+:root{--bg:#10140f;--panel:#191f18;--panel2:#20281f;--line:#303a2e;--lime:#c8ff55;--lime2:#91d92f;--cream:#f4f2e8;--muted:#9ca697;--red:#ff6b70;--blue:#75d7ff;--gold:#ffd36b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 70% -10%,#26361f 0,transparent 42%),var(--bg);color:var(--cream);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{max-width:1240px;margin:auto;padding:0 22px}.top{height:76px;border-bottom:1px solid #293126;background:#10140fe8;backdrop-filter:blur(16px);position:sticky;top:0;z-index:20}.topin{height:100%;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.09em;font-size:14px;white-space:nowrap}.brandmark{height:39px;width:39px;flex:0 0 39px;border-radius:12px;background:#222c1e;display:block;object-fit:cover;border:1px solid #647a4d;box-shadow:0 0 24px #baff5220}.logoImg{padding:2px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.18em;font-weight:800}.nav{display:flex;gap:6px;margin-left:auto}.nav button,.iconbtn{background:transparent;border:1px solid transparent;color:#b9c1b3;padding:10px 13px;border-radius:10px;font-weight:750;font-size:12px}.nav button:hover,.nav button.active{color:var(--lime);background:#c8ff5510;border-color:#c8ff5528}.topright{display:flex;gap:9px;align-items:center}.walletBtn{min-width:132px}.walletBtn.connected{border-color:#8abf4b;color:var(--lime);background:#1c2917}.homeSocials{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.homeSocialCard{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:#151c13d9;min-width:0}.homeSocialCard.official{border-color:#647e45;background:linear-gradient(110deg,#1d2a17,#151c13)}.homeSocialCard.creator{border-color:#394a60;background:linear-gradient(110deg,#17212b,#151c13)}.homeSocialInfo{min-width:0}.homeSocialInfo b{display:block;font-size:11px;letter-spacing:.04em}.homeSocialInfo span{display:block;font-size:10px;color:var(--muted);margin-top:2px}.homeSocialLinks{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.homeSocialLinks a{display:inline-flex;padding:7px 9px;border:1px solid #394832;border-radius:8px;font-size:10px;font-weight:850;white-space:nowrap}.homeSocialCard.official .homeSocialLinks a:first-child{color:var(--lime);border-color:#647e45}.homeSocialCard.creator .homeSocialLinks a:first-child{color:#9fd7ff;border-color:#46637b}.homeSocialLinks a:hover{border-color:var(--lime);color:var(--lime)}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:11px;font-weight:800;white-space:nowrap}.pill b{color:var(--lime)}.btn{border:1px solid var(--line);border-radius:11px;padding:11px 15px;color:var(--cream);font-size:12px;font-weight:850;background:var(--panel2);transition:.16s}.btn:hover{transform:translateY(-1px);border-color:#697d55}.btn.primary{background:var(--lime);border-color:var(--lime);color:#11170c}.btn.primary:hover{background:#d6ff82}.btn.small{padding:8px 11px;font-size:11px}.dots{font-size:22px;line-height:1;padding:7px 12px}.menu{position:absolute;right:max(20px,calc((100vw - 1240px)/2 + 22px));top:64px;width:220px;padding:8px;border:1px solid var(--line);background:#181e17;box-shadow:0 20px 60px #0009;border-radius:14px;display:none}.menu.show{display:block}.menu button{display:block;text-align:left;width:100%;padding:11px 12px;border:0;border-radius:8px;background:transparent;color:#d9dfd4;font-size:12px;font-weight:750}.menu button:hover{background:#c8ff5512;color:var(--lime)}.mobileNav{display:none}
+.hero{padding:48px 0 28px}.heroGrid{display:grid;grid-template-columns:1.12fr .88fr;gap:24px;align-items:stretch}.heroCopy{padding:22px 0}.eyebrow{color:var(--lime);font-size:10px;font-weight:950;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";width:22px;height:2px;background:var(--lime)}h1{font-size:clamp(38px,5.8vw,74px);line-height:.98;letter-spacing:-.065em;margin:18px 0 18px;font-weight:950;max-width:720px}h1 em{font-style:normal;color:var(--lime)}.lead{color:#aab4a4;font-size:15px;max-width:580px;line-height:1.8}.heroActions{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.stats{display:flex;gap:22px;flex-wrap:wrap;padding-top:20px;border-top:1px solid #2b3429;max-width:570px}.stat strong{display:block;font-size:20px;letter-spacing:-.04em}.stat span{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.heroArt{position:relative;min-height:350px;border:1px solid #34432e;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#415c2a 0,#1c2b19 40%,#131a12 78%);isolation:isolate}.heroArt:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#baff520b 1px,transparent 1px),linear-gradient(90deg,#baff520b 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(transparent,#000)}.artRing{position:absolute;width:270px;height:270px;border:1px solid #baff5248;border-radius:50%;top:38px;left:50%;transform:translateX(-50%);box-shadow:0 0 70px #c8ff5512,inset 0 0 60px #c8ff5510}.heroNft{position:absolute;object-fit:cover;width:min(66%,285px);aspect-ratio:1;left:50%;top:26px;transform:translateX(-50%) rotate(-3deg);border-radius:18px;mix-blend-mode:screen;filter:drop-shadow(0 20px 22px #0009);mask-image:linear-gradient(#000 75%,transparent)}.artLabel{position:absolute;left:18px;bottom:18px;background:#11180fdc;border:1px solid #526544;border-radius:12px;padding:12px 14px;backdrop-filter:blur(12px)}.artLabel b{display:block;font-size:13px}.artLabel span{font-size:10px;color:var(--lime);letter-spacing:.1em}.artTag{position:absolute;right:17px;top:17px;background:var(--lime);color:#10160b;padding:7px 10px;border-radius:8px;font-size:9px;font-weight:950;letter-spacing:.12em}.floating{position:absolute;right:18px;bottom:20px;width:95px;border:1px solid #46563b;border-radius:12px;padding:10px;background:#151c13dd;text-align:center}.floating strong{font-size:18px;color:var(--lime);display:block}.floating span{font-size:9px;color:var(--muted);text-transform:uppercase}
+.section{padding:35px 0}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:18px}.sectionHead h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.05em;margin:7px 0 0}.sectionHead p{margin:0;color:var(--muted);font-size:12px;max-width:430px}.gameGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gameCard{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#1b2219,#141914);transition:.2s}.gameCard:hover{transform:translateY(-4px);border-color:#657d4a}.gameCover{height:160px;position:relative;overflow:hidden;background:#182116;display:grid;place-items:center}.gameCover:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#141914)}.coverTitle{position:absolute;left:16px;top:15px;font-size:10px;letter-spacing:.17em;font-weight:950;color:var(--lime);z-index:2}.coverArt{width:105px;height:105px;object-fit:cover;border-radius:22px;position:relative;z-index:1;transform:rotate(-6deg);box-shadow:0 15px 35px #0008}.coverArt.blue{filter:hue-rotate(65deg) saturate(1.4)}.coverArt.pink{filter:hue-rotate(285deg) saturate(1.35)}.gameNum{position:absolute;right:13px;top:12px;color:#ffffff4b;font-weight:950;font-size:30px;z-index:2}.gameBody{padding:16px}.gameMeta{display:flex;align-items:center;justify-content:space-between;gap:8px}.gameMeta h3{margin:0;font-size:17px;letter-spacing:-.04em}.tag{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;border:1px solid #43543a;border-radius:6px;color:var(--lime);padding:5px 7px}.gameBody p{color:var(--muted);font-size:11px;line-height:1.7;min-height:39px}.gameFoot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #2b3429;padding-top:12px;margin-top:13px}.gameFoot span{font-size:10px;color:#a4afa0}.gameFoot .btn{padding:9px 12px}
+.gamePanel{display:none;border:1px solid #415337;background:#121912;border-radius:20px;padding:15px;margin-top:18px;overflow:hidden}.gamePanel.active{display:block;position:fixed;z-index:60;inset:3vh 3vw;max-width:1180px;margin:auto;overflow:auto;max-height:94vh;box-shadow:0 25px 100px #000d;background:#111810;border-color:#718c53}
+.gamePanel.active:before{content:"";position:fixed;inset:0;background:#020502d9;z-index:-1;backdrop-filter:blur(8px)}
+.gamePanel.active.minimized{inset:auto 16px 16px auto;width:min(420px,calc(100vw - 24px));max-height:none;overflow:visible;padding:11px;border-radius:15px}
+.gamePanel.active.minimized:before{display:none}
+.gamePanel.active.minimized .canvasWrap,.gamePanel.active.minimized .gameControls{display:none}
+.gamePanel.active.minimized .gameTop{margin-bottom:0}
+.gamePanel.active.minimized .gameTop .eyebrow{display:none}
+.gamePanel.active.minimized #minimizeGame{color:var(--lime)}
+.gamePanel.active .canvasWrap{max-height:calc(94vh - 190px)}
+.gamePanel.active .canvasWrap canvas{max-height:calc(94vh - 270px);object-fit:contain}
+.logoImg{image-rendering:auto}
+.gameModalActions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.faqList{display:grid;gap:9px;margin-top:18px}
+.faqItem{border:1px solid var(--line);border-radius:13px;background:#171e15;overflow:hidden}
+.faqQ{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:center;text-align:left;background:transparent;border:0;color:var(--cream);padding:15px 16px;font-size:13px;font-weight:850}
+.faqQ span:last-child{color:var(--lime);font-size:19px;transition:transform .2s}
+.faqA{display:none;padding:0 16px 16px;color:var(--muted);font-size:12px;line-height:1.8;max-width:900px}
+.faqItem.open .faqA{display:block}.faqItem.open .faqQ span:last-child{transform:rotate(45deg)}
+.socialLinks{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.socialLink{display:inline-flex;align-items:center;gap:8px;border:1px solid #394832;border-radius:10px;padding:10px 12px;background:#1a2317;font-size:11px;font-weight:850}
+.socialLink:hover{border-color:var(--lime);color:var(--lime)}
+.characterStrip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
+.characterTile{background:#11170f;border:1px solid #35432e;border-radius:12px;padding:10px;display:flex;align-items:center;gap:10px;min-width:0}
+.characterTile img{width:52px;height:52px;object-fit:cover;border-radius:9px;flex:0 0 52px}
+.characterTile b{display:block;font-size:10px}.characterTile span{font-size:9px;color:var(--muted)}
+@media(max-width:700px){.homeSocials{grid-template-columns:1fr}.homeSocialCard{align-items:flex-start;flex-direction:column}.homeSocialLinks{justify-content:flex-start}.walletBtn{min-width:0}}@media(max-width:580px){.brandmark{height:32px;width:32px;flex-basis:32px}.gamePanel.active{inset:1vh 1.5vw;max-height:98vh;padding:9px}.gamePanel.active .canvasWrap canvas{max-height:56vh}.gamePanel.active.minimized{inset:auto 8px 8px auto;width:calc(100vw - 16px);max-height:none;padding:9px}.characterStrip{grid-template-columns:1fr}.characterTile{padding:8px}}.gameTop{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}.gameTop h3{margin:0;font-size:17px}.gameStats{display:flex;gap:8px}.gameStat{padding:7px 10px;background:#20291e;border-radius:8px;font-size:10px;color:var(--muted)}.gameStat b{color:var(--cream);font-size:12px;margin-left:5px}.canvasWrap{position:relative;width:100%;max-width:900px;margin:auto;border-radius:14px;overflow:hidden;background:#080d09;border:1px solid #2d3928}.canvasWrap canvas{display:block;width:100%;height:auto;touch-action:none}.canvasOverlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#091008b8;backdrop-filter:blur(4px);padding:20px;text-align:center}.canvasOverlay.hidden{display:none}.overlayBox{max-width:400px}.overlayBox h3{font-size:30px;margin:0 0 9px;letter-spacing:-.05em}.overlayBox p{color:#b0bca9;font-size:12px;line-height:1.8}.gameControls{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}.controlHint{color:var(--muted);font-size:10px;line-height:1.7}.touchControls{display:none;gap:7px}.touchControls button{width:44px;height:42px;border-radius:10px;border:1px solid #44553b;background:#202a1c;color:var(--lime);font-size:15px;font-weight:900;touch-action:manipulation}
+.featureGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.feature{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:21px}.feature h3{margin:0 0 8px;font-size:18px;letter-spacing:-.03em}.feature p{color:var(--muted);font-size:12px;line-height:1.8}.feature .miniIcon{width:40px;height:40px;border-radius:12px;background:#c8ff5516;color:var(--lime);display:grid;place-items:center;font-size:20px;margin-bottom:14px}.quizLayout,.checkerLayout{display:grid;grid-template-columns:1fr .75fr;gap:16px}.quizBox,.checkBox{border:1px solid var(--line);background:linear-gradient(145deg,#1c2419,#151a14);border-radius:18px;padding:22px}.quizDate{font-size:10px;color:var(--lime);letter-spacing:.15em;font-weight:900;text-transform:uppercase}.quizBox h3{font-size:22px;letter-spacing:-.04em;margin:12px 0 18px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}.answer{border:1px solid #394634;background:#1c241a;color:#e6ebdf;border-radius:10px;padding:13px;text-align:left;font-size:12px;font-weight:750}.answer:hover{border-color:var(--lime)}.answer.correct{border-color:var(--lime);background:#c8ff551a}.answer.wrong{border-color:var(--red);background:#ff6b7015}.answer:disabled{cursor:default}.quizFeedback{font-size:12px;color:var(--muted);margin-top:12px;min-height:18px}.quizAside{display:flex;flex-direction:column;justify-content:space-between;gap:12px}.quizPoints{font-size:42px;letter-spacing:-.07em;font-weight:950;color:var(--lime)}.quizPoints small{display:block;font-size:10px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}.inputrow{display:flex;gap:8px;margin-top:15px}.inputrow input{min-width:0;flex:1;border:1px solid #43513c;background:#0f140e;color:var(--cream);padding:12px;border-radius:10px;outline:none;font-size:12px}.inputrow input:focus{border-color:var(--lime)}.resultBox{margin-top:14px;padding:14px;border-radius:12px;background:#0f150e;border:1px solid #2f3b29;display:none}.resultBox.show{display:block}.resultTop{display:flex;align-items:center;gap:12px}.resultAvatar{width:58px;height:58px;object-fit:cover;border-radius:10px;border:1px solid #536544}.resultBox h4{margin:0 0 4px;font-size:14px}.resultBox p{margin:0;color:var(--muted);font-size:11px;overflow-wrap:anywhere}.statusLine{margin-top:12px;font-size:12px;color:var(--muted);line-height:1.7}.statusLine strong{color:var(--lime)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}
+.table{width:100%;border-collapse:collapse;margin-top:12px}.table th,.table td{text-align:left;border-bottom:1px solid #2b3429;padding:12px 9px;font-size:11px}.table th{color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.1em}.table td:first-child{color:var(--lime);font-weight:900}.table td:last-child{text-align:right}.creatorGrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px}.creatorCard,.aboutCard{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:22px}.creatorRow{display:flex;gap:13px;align-items:center;margin-bottom:15px}.creatorAvatar{width:58px;height:58px;object-fit:cover;border-radius:15px;border:1px solid #4c633c}.creatorRow h3{margin:0;font-size:17px}.creatorRow p{margin:3px 0 0;color:var(--muted);font-size:11px}.detail{padding:12px 0;border-top:1px solid #2b3429}.detail span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;margin-bottom:5px}.detail strong{font-size:11px;font-weight:650}.aboutCard h3{font-size:23px;letter-spacing:-.04em;margin:0 0 10px}.aboutCard p{color:var(--muted);font-size:12px;line-height:1.9}.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:16px}.roadmap div{padding:13px;border:1px solid #34412e;border-radius:12px;background:#161e14}.roadmap b{display:block;font-size:11px;color:var(--lime);margin-bottom:5px}.roadmap span{font-size:10px;color:var(--muted);line-height:1.6}
+.footer{border-top:1px solid #293126;margin-top:40px;padding:24px 0 35px;color:var(--muted);font-size:10px}.footerIn{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#d5ff80;color:#10160c;padding:12px 16px;border-radius:11px;font-size:12px;font-weight:850;z-index:100;transition:.2s;box-shadow:0 8px 30px #0007}.toast.show{opacity:1;transform:translate(-50%,0)}.modal{position:fixed;inset:0;background:#000b;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalBox{max-width:500px;width:100%;border:1px solid #46583b;border-radius:18px;background:#171e15;padding:23px;max-height:85vh;overflow:auto}.modalHead{display:flex;align-items:center;justify-content:space-between}.modalHead h3{margin:0;font-size:20px}.modalBox p{font-size:12px;color:var(--muted);line-height:1.8}.close{background:#263021;border:1px solid #3c4b33;color:var(--cream);border-radius:8px;width:32px;height:32px;font-size:18px}
+@media(max-width:900px){.nav{display:none}.mobileNav{display:flex;gap:4px;overflow:auto;padding:10px 0;border-bottom:1px solid #293126}.mobileNav button{flex:0 0 auto;background:transparent;border:1px solid transparent;color:#b9c1b3;border-radius:8px;padding:8px 10px;font-size:10px;font-weight:800}.mobileNav button.active{color:var(--lime);border-color:#c8ff5530;background:#c8ff5510}.top{height:66px}.topin{gap:12px}.topright .pill{display:none}.heroGrid{grid-template-columns:1fr}.heroCopy{padding:8px 0}.heroArt{min-height:320px}.gameGrid{grid-template-columns:1fr 1fr}.quizLayout,.checkerLayout{grid-template-columns:1fr}.creatorGrid{grid-template-columns:1fr}.section{padding:26px 0}}
+@media(max-width:580px){.wrap{padding:0 13px}.topin{gap:8px}.brand{font-size:11px;gap:7px}.brandmark{width:32px;height:32px}.topright{margin-left:auto}.topright .btn{padding:9px 10px;font-size:10px}.hero{padding:28px 0 10px}.heroArt{min-height:270px}.artRing{width:220px;height:220px;top:30px}.heroNft{width:66%;top:22px}.floating{width:78px;right:10px;bottom:12px}.artLabel{left:10px;bottom:12px}.stats{gap:15px}.stat strong{font-size:17px}.gameGrid{grid-template-columns:1fr}.gameCover{height:155px}.gameCard{display:grid;grid-template-columns:36% 64%}.gameCover{height:100%;min-height:190px}.gameBody{padding:13px}.gameBody p{min-height:0}.gameMeta{align-items:flex-start;flex-direction:column}.featureGrid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.roadmap{grid-template-columns:1fr}.sectionHead{align-items:flex-start;flex-direction:column}.touchControls{display:flex}.gameControls{align-items:flex-start}.gameControls .btn{flex:1}.gameStat{padding:6px}.gamePanel{padding:9px}.quizBox,.checkBox,.feature,.creatorCard,.aboutCard{padding:16px}.inputrow{flex-wrap:wrap}.inputrow .btn{width:100%}}
+
+/* CHOG PLAYVERSE desktop polish */
+.wrap{max-width:1160px}.section{padding:25px 0}.hero{padding-top:22px}.heroGrid{gap:28px}.heroCopy .lead{max-width:520px;font-size:14px;line-height:1.7}.heroArt{min-height:410px}.heroNft{max-width:390px}.sectionHead{margin-bottom:14px}.gameGrid{gap:12px}.gameCover{height:145px}.gameBody{padding:14px}.gameBody p{line-height:1.55}.aboutCard p{line-height:1.65}.homeSocials{margin-top:0;margin-bottom:18px;gap:10px}.homeSocialCard{padding:11px 13px}.creatorAddress{overflow-wrap:anywhere;max-width:100%;font-size:9px!important}.finePrint{font-size:10px!important}
+@media(min-width:901px) and (max-width:1200px){.topin{gap:10px}.brand{font-size:12px;letter-spacing:.04em}.brand small{font-size:8px}.nav{gap:0}.nav button{padding:8px 7px;font-size:11px}.topright{gap:6px}.topright .btn{padding:9px 10px;font-size:10px}.walletBtn{min-width:108px}.heroGrid{grid-template-columns:1.05fr .95fr}.hero h1{font-size:clamp(44px,5vw,68px)}}
+@media(min-width:1201px){.heroGrid{grid-template-columns:1.08fr .92fr}.hero h1{font-size:72px}}
+@media(max-width:900px){.section{padding:24px 0}.heroArt{min-height:300px}.homeSocials{margin-bottom:15px}}
+
+
+/* CHOG PLAYVERSE — five-world arcade polish */
+.gameRailHead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:4px 0 12px}
+.railIntro{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.railHint{font-size:11px;color:var(--muted)}
+.railButtons{display:flex;gap:7px;flex:0 0 auto}
+.railScrollBtn{width:38px;height:34px;padding:0;font-size:17px}
+.gameCover{isolation:isolate}
+.gameCover:before{content:"";position:absolute;inset:-20%;z-index:0;opacity:.65;pointer-events:none;background:linear-gradient(115deg,transparent 25%,#ffffff14 43%,transparent 58%);transform:translateX(-75%);animation:coverSweep 7s ease-in-out infinite}
+.gameCover:after{z-index:2;pointer-events:none}
+.coverArt{z-index:3;animation:chogHover 4s ease-in-out infinite;will-change:transform}
+.gameNum{z-index:4}
+.coverTitle,.coverFoot{z-index:4;position:absolute;font-size:9px;letter-spacing:.15em;font-weight:950}
+.coverFoot{left:15px;bottom:13px;color:#dcead3a8}
+.coverOrb,.underwaterGlow,.planet,.worldHorizon,.speedTrail{position:absolute;pointer-events:none}
+.cover-arena{background:radial-gradient(circle at 50% 55%,#435b2c 0,#1a2818 42%,#0c130d 80%)}
+.orb-a{width:170px;height:170px;left:calc(50% - 85px);top:40px;border:1px solid #b8ff6b55;border-radius:50%;box-shadow:0 0 30px #a4ff3830,inset 0 0 40px #9bf35420;animation:orbitPulse 5s ease-in-out infinite}
+.cover-deep{background:radial-gradient(ellipse at 50% 5%,#176a7b 0,#0a3447 44%,#061720 100%)}
+.cover-deep:before{background:repeating-linear-gradient(172deg,transparent 0 17px,#8eeeff12 18px 19px,transparent 20px 46px);animation:waterFlow 11s linear infinite}
+.underwaterGlow{width:210px;height:190px;left:calc(50% - 105px);top:30px;border-radius:50%;background:radial-gradient(circle,#34e3d455 0,transparent 70%);animation:waterPulse 4s ease-in-out infinite}
+.cover-space{background:radial-gradient(circle at 70% 35%,#45236c 0,#1b143a 35%,#070c1d 76%)}
+.cover-space:before{background-image:radial-gradient(circle,#fff 1px,transparent 1.7px),radial-gradient(circle,#97c6ff 1px,transparent 1.8px);background-size:39px 39px,67px 67px;background-position:0 0,18px 19px;animation:starDrift 13s linear infinite}
+.planet-one{width:66px;height:66px;right:19%;top:44px;border-radius:50%;background:linear-gradient(140deg,#ffb5d9,#9b61d1 52%,#37285f);box-shadow:0 0 25px #b783ff55}
+.planet-two{width:18px;height:18px;left:15%;bottom:40px;border-radius:50%;background:#6fd8ff;box-shadow:0 0 20px #50d8ff77;animation:planetFloat 6s ease-in-out infinite}
+.cover-world{background:linear-gradient(180deg,#2f1641 0,#612957 54%,#191323 100%)}
+.cover-world:before{background:repeating-linear-gradient(0deg,transparent 0 35px,#f7afff12 36px 37px);animation:worldLines 8s linear infinite}
+.worldHorizon{inset:auto 0 0;height:62px;background:linear-gradient(160deg,transparent 10%,#ca71f455 11% 12%,transparent 13%),linear-gradient(12deg,#160f23 0 42%,#5e3567 43% 45%,#1a1027 46%);opacity:.8}
+.cover-race{background:linear-gradient(155deg,#164b59,#0c202d 58%,#081118)}
+.cover-race:before{background:repeating-linear-gradient(115deg,transparent 0 20px,#a0edff18 21px 23px,transparent 24px 54px);animation:speedLines 2.5s linear infinite}
+.speedTrail{width:200px;height:5px;right:-15px;top:50%;background:linear-gradient(90deg,transparent,#64e3ff,transparent);transform:rotate(-22deg);filter:blur(1px);animation:trailPulse 1.5s ease-in-out infinite}
+.tag-aqua{color:#6af4e6;border-color:#326e70}.tag-violet{color:#c5a5ff;border-color:#64508e}.tag-pink{color:#ff9adf;border-color:#65415b}.tag-blue{color:#75d7ff;border-color:#3b6170}
+.gameCard{transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s,box-shadow .28s}
+.gameCard:hover{box-shadow:0 18px 44px #0007}
+#gameRail{scrollbar-color:#597548 #111711;scrollbar-width:thin}
+#gameRail::-webkit-scrollbar{height:8px}
+#gameRail::-webkit-scrollbar-track{background:#111711;border-radius:9px}
+#gameRail::-webkit-scrollbar-thumb{background:#4d663d;border-radius:9px}
+@keyframes coverSweep{0%,25%{transform:translateX(-80%)}65%,100%{transform:translateX(80%)}}
+@keyframes chogHover{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-7px) rotate(-2deg)}}
+@keyframes orbitPulse{0%,100%{transform:scale(.95);opacity:.45}50%{transform:scale(1.06);opacity:.9}}
+@keyframes waterFlow{0%{transform:translate3d(-2%,0,0)}100%{transform:translate3d(2%,5%,0)}}
+@keyframes waterPulse{0%,100%{transform:scale(.92);opacity:.5}50%{transform:scale(1.08);opacity:1}}
+@keyframes starDrift{0%{background-position:0 0,18px 19px}100%{background-position:80px 120px,-40px 80px}}
+@keyframes planetFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes worldLines{0%{background-position:0 0}100%{background-position:0 90px}}
+@keyframes speedLines{0%{transform:translateX(-5%) skewX(-8deg)}100%{transform:translateX(5%) skewX(-8deg)}}
+@keyframes trailPulse{0%,100%{opacity:.3;transform:rotate(-22deg) translateX(-10px)}50%{opacity:1;transform:rotate(-22deg) translateX(10px)}}
+@media(min-width:701px){
+  #gameRail.gameGrid{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;padding:7px 4px 18px;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain}
+  #gameRail .gameCard{display:flex;flex-direction:column;min-height:100%;flex:0 0 clamp(292px,28.5vw,352px);scroll-snap-align:start}
+  #gameRail .gameBody{display:flex;flex:1;flex-direction:column}
+  #gameRail .gameBody>p{flex:1}
+  #gameRail .gameFoot{margin-top:16px}
+  #gameRail .gameCover{height:190px;flex:0 0 190px}
+  #gameRail .gameCard:hover{transform:translateY(-5px)}
+  .gamePanel.active{position:fixed!important;left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;transform:translate(-50%,-50%)!important;width:min(94vw,1240px)!important;max-width:none!important;max-height:94vh!important;overflow:auto!important;z-index:999!important;box-shadow:0 30px 100px #000c,0 0 0 1px #9ac96b35!important}
+  .gamePanel.active .canvasWrap{max-width:1080px}
+  .gamePanel.active .canvasWrap canvas{width:100%;height:auto;max-height:58vh;object-fit:contain}
+  .gamePanel.active.minimized{left:auto!important;top:auto!important;right:24px!important;bottom:24px!important;transform:none!important;width:min(440px,calc(100vw - 48px))!important;max-height:220px!important;overflow:hidden!important}
+  .gamePanel.active.minimized .canvasWrap{display:none}
+  .gamePanel.active.minimized .gameControls{display:none}
+}
+@media(prefers-reduced-motion:reduce){.gameCard,.coverArt,.gameCover:before,.orb-a,.underwaterGlow,.planet-two,.speedTrail{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@media(max-width:700px){.railButtons{display:none}.railHint{font-size:10px}}
+
+/* Layout balance pass: remove stretched empty cards and fix narrow-screen grids */
+#nftcheck .checkerLayout{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:start;gap:18px}
+#nftcheck .checkBox,#nftcheck .checkerLayout>.feature{height:auto;min-width:0;align-self:start}
+#nftcheck .checkBox{padding:clamp(16px,2vw,24px)}
+#nftcheck .checkerLayout>.feature{padding:clamp(16px,2vw,24px)}
+#nftcheck .detail strong{overflow-wrap:anywhere;word-break:break-word}
+#nftcheck .characterStrip{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#nftcheck .characterTile{min-width:0;gap:7px;padding:8px}
+#nftcheck .characterTile img{width:42px;height:42px;flex-basis:42px}
+#nftcheck .characterTile b,#nftcheck .characterTile span{overflow-wrap:anywhere}
+#leaderboard .featureGrid{grid-template-columns:minmax(0,1fr);align-items:start}
+#leaderboard .feature{width:100%;max-width:none}
+#leaderboard .table{width:100%;table-layout:fixed}
+#leaderboard .table th:first-child,#leaderboard .table td:first-child{width:68%}
+@media(max-width:700px){
+  .quizLayout,.checkerLayout,.featureGrid{grid-template-columns:minmax(0,1fr)!important}
+  #nftcheck .checkerLayout{gap:12px}
+  #nftcheck .checkBox,#nftcheck .checkerLayout>.feature{padding:15px}
+  #nftcheck .characterStrip{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #nftcheck .characterTile{flex-direction:column;align-items:flex-start}
+  #nftcheck .characterTile img{width:42px;height:42px;flex-basis:42px}
+  #leaderboard .feature{padding:15px}
+  .sectionHead{align-items:flex-start;flex-direction:column;gap:7px}
+  .sectionHead p{max-width:none}
+}
+@media(max-width:420px){
+  #nftcheck .characterStrip{grid-template-columns:1fr}
+  #nftcheck .characterTile{flex-direction:row;align-items:center}
+  #nftcheck .characterTile img{width:46px;height:46px;flex-basis:46px}
+  .wrap{padding-left:14px;padding-right:14px}
+}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap topin">
+<a class="brand" href="#home"><img class="brandmark logoImg" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/896592b1d03260a0c75935d9b36b9a/d7896592b1d03260a0c75935d9b36b9a.webp?w=200" alt="Chog Genesis logo"><span>CHOG PLAYVERSE<small>CHOG GENESIS ARCADE</small></span></a>
+<nav class="nav"><button class="active" data-goto="home">Home</button><button data-goto="games">Games</button><button data-goto="quiz">Daily Quiz</button><button data-goto="nftcheck">NFT Checker</button><button data-goto="about">About</button><button data-goto="faq">FAQ</button></nav>
+<div class="topright"><span class="pill">NETWORK <b>MONAD</b></span><button class="btn walletBtn" id="connectWallet">CONNECT WALLET</button><button class="btn primary" id="playTop">PLAY NOW ↗</button><button class="btn dots" id="dots" aria-label="Open menu">⋯</button></div>
+<div class="menu" id="menu"><button data-modal="profile">◉ &nbsp; Player profile</button><button data-goto="about">ⓘ &nbsp; About the project</button><button data-goto="faq">? &nbsp; FAQ</button><button data-modal="trade">↗ &nbsp; Trade CHOG</button><button data-modal="refer">⌁ &nbsp; Refer a friend</button><button data-goto="leaderboard">♜ &nbsp; Leaderboard</button><button data-goto="nftcheck">◇ &nbsp; Check an NFT</button></div>
+</div></header>
+<div class="wrap mobileNav" id="mobileNav"><button class="active" data-goto="home">HOME</button><button data-goto="games">GAMES</button><button data-goto="quiz">DAILY QUIZ</button><button data-goto="nftcheck">NFT CHECKER</button><button data-goto="leaderboard">LEADERBOARD</button><button data-goto="about">ABOUT</button><button data-goto="faq">FAQ</button></div>
+<main>
+<section class="hero wrap" id="home"><div class="heroGrid">
+<div class="heroCopy"><div class="eyebrow">A community-built Chog universe</div><h1>ENTER THE<br><em>CHOGVERSE.</em></h1><p class="lead">A Chog-inspired arcade on Monad. Play three challenges, earn XP, take the daily quiz and check NFT ownership.</p>
+<div class="heroActions"><button class="btn primary" data-goto="games">EXPLORE GAMES ↗</button><button class="btn" data-goto="nftcheck">CHECK YOUR CHOG NFT</button></div>
+<div class="stats"><div class="stat"><strong>03</strong><span>Playable modes</span></div><div class="stat"><strong>01</strong><span>Daily quiz</span></div><div class="stat"><strong>0 gas</strong><span>To play</span></div></div>
+</div>
+<div class="heroArt"><div class="artRing"></div><span class="artTag">GENESIS CHARACTER FILE</span><img class="heroNft" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/896592b1d03260a0c75935d9b36b9a/d7896592b1d03260a0c75935d9b36b9a.webp?w=1000" alt="Chog Genesis NFT character #1113" onerror="this.src='https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/1392f48326f9306d8c366aa2873ed5/6b1392f48326f9306d8c366aa2873ed5.webp?w=1000'"><div class="artLabel"><b>CHOG GENESIS</b><span>ON-CHAIN IDENTITY · MONAD</span></div><div class="floating"><strong>CHOG</strong><span>Play. Learn. Repeat.</span></div></div>
+</div>
+
+</section>
+<section class="section wrap" id="games"><div class="sectionHead"><div><div class="eyebrow">Choose your challenge</div><h2>Five worlds. One Chog.</h2></div><p>Five playable worlds. Keyboard and touch controls, local best scores and XP.</p></div>
+
+<div class="gameRailHead">
+  <div class="railIntro"><span class="eyebrow">FIVE WORLDS · ONE CHOG</span><span class="railHint">Scroll to explore every world</span></div>
+  <div class="railButtons" aria-label="Scroll game banners">
+    <button class="btn small railScrollBtn" data-scroll-games="-1" aria-label="Scroll game banners left">←</button>
+    <button class="btn small railScrollBtn" data-scroll-games="1" aria-label="Scroll game banners right">→</button>
+  </div>
+</div>
+<div class="gameGrid" id="gameRail">
+  <article class="gameCard">
+    <div class="gameCover cover-arena"><span class="coverTitle">COMBAT SIMULATION</span><span class="gameNum">01</span><span class="coverOrb orb-a"></span><img class="coverArt" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/1392f48326f9306d8c366aa2873ed5/6b1392f48326f9306d8c366aa2873ed5.webp?w=1000" alt="Chog character for Rift Defender"><span class="coverFoot">DEFEND THE CORE</span></div>
+    <div class="gameBody"><div class="gameMeta"><h3>CHOG: RIFT DEFENDER</h3><span class="tag">ACTION</span></div><p>Survive enemy waves, auto-fire at threats and gather rift shards before the core falls.</p><div class="gameFoot"><span>WASD / arrows · auto-fire</span><button class="btn primary" data-game="arena">PLAY ↗</button></div></div>
+  </article>
+  <article class="gameCard">
+    <div class="gameCover cover-deep"><span class="coverTitle">ABYSSAL EXPEDITION</span><span class="gameNum">02</span><span class="underwaterGlow"></span><img class="coverArt blue" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/eec66549d6686db1b1850a4ae6bac1/7feec66549d6686db1b1850a4ae6bac1.webp?w=1000" alt="Chog character ready for underwater exploration"><span class="coverFoot">DIVE · DODGE · DISCOVER</span></div>
+    <div class="gameBody"><div class="gameMeta"><h3>CHOG: DEEP DIVE</h3><span class="tag tag-aqua">UNDERWATER</span></div><p>Explore the glowing ocean, collect pearls and steer Chog around mines and deep-sea hazards.</p><div class="gameFoot"><span>← → swim · ↑ ↓ move</span><button class="btn primary" data-game="deep">DIVE IN ↗</button></div></div>
+  </article>
+  <article class="gameCard">
+    <div class="gameCover cover-space"><span class="coverTitle">ORBITAL SURVIVAL</span><span class="gameNum">03</span><span class="planet planet-one"></span><span class="planet planet-two"></span><img class="coverArt pink" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/896592b1d03260a0c75935d9b36b9a/d7896592b1d03260a0c75935d9b36b9a.webp?w=1000" alt="Chog character on a space mission"><span class="coverFoot">BEYOND THE RIFT</span></div>
+    <div class="gameBody"><div class="gameMeta"><h3>CHOG: SPACE ODYSSEY</h3><span class="tag tag-violet">SPACE</span></div><p>Navigate an asteroid field, collect cosmic energy and survive a fast-moving orbital run.</p><div class="gameFoot"><span>← → steer · Space boost</span><button class="btn primary" data-game="space">LAUNCH ↗</button></div></div>
+  </article>
+  <article class="gameCard">
+    <div class="gameCover cover-world"><span class="coverTitle">DIMENSIONAL RUN</span><span class="gameNum">04</span><span class="worldHorizon"></span><img class="coverArt" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/1392f48326f9306d8c366aa2873ed5/6b1392f48326f9306d8c366aa2873ed5.webp?w=1000" alt="Chog character in the World Runner game"><span class="coverFoot">RUN THE RIFT</span></div>
+    <div class="gameBody"><div class="gameMeta"><h3>CHOG: WORLD RUNNER</h3><span class="tag tag-pink">2D RUNNER</span></div><p>Dash through a shifting 2D world, switch lanes, jump over blocks and slide under gates.</p><div class="gameFoot"><span>← → lanes · ↑ jump · ↓ slide</span><button class="btn primary" data-game="runner">RUN ↗</button></div></div>
+  </article>
+  <article class="gameCard">
+    <div class="gameCover cover-race"><span class="coverTitle">HIGH-SPEED PROTOCOL</span><span class="gameNum">05</span><span class="speedTrail"></span><img class="coverArt blue" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/eec66549d6686db1b1850a4ae6bac1/7feec66549d6686db1b1850a4ae6bac1.webp?w=1000" alt="Chog character for Monad Overdrive"><span class="coverFoot">PUSH YOUR LIMIT</span></div>
+    <div class="gameBody"><div class="gameMeta"><h3>MONAD OVERDRIVE</h3><span class="tag tag-blue">RACING</span></div><p>Thread through traffic, collect energy cells and use boosts to chase a new personal best.</p><div class="gameFoot"><span>← → switch lane · Space boost</span><button class="btn primary" data-game="race">RACE ↗</button></div></div>
+  </article>
+</div>
+<div class="gamePanel" id="gamePanel"><div class="gameTop"><div><div class="eyebrow">Now playing</div><h3 id="gameTitle">CHOG: RIFT DEFENDER</h3></div><div class="gameStats"><div class="gameStat">SCORE <b id="score">0</b></div><div class="gameStat">BEST <b id="best">0</b></div><div class="gameStat">LEVEL <b id="level">1</b></div></div><div class="gameModalActions"><button class="btn small" id="minimizeGame">— MINIMIZE</button><button class="btn small" id="fullscreenGame">⛶ FULLSCREEN</button><button class="btn small" id="closeGame">✕ CLOSE</button></div></div>
+<div class="canvasWrap"><canvas id="gameCanvas" width="900" height="500" aria-label="Playable game canvas"></canvas><div class="canvasOverlay" id="gameOverlay"><div class="overlayBox"><div class="eyebrow" style="justify-content:center">Mission ready</div><h3 id="overlayTitle">Enter the Rift</h3><p id="overlayText">Survive, collect shards and keep moving. Use WASD or arrow keys, or drag on the playfield on mobile.</p><button class="btn primary" id="startGame">START RUN ↗</button></div></div></div>
+<div class="gameControls"><div class="controlHint" id="controlsText">WASD / arrow keys to move · auto-fire · collect lime shards · avoid red enemies.</div><div class="touchControls" id="touchControls"><button data-act="left">←</button><button data-act="up">↑</button><button data-act="down">↓</button><button data-act="right">→</button><button data-act="boost">⚡</button></div><div style="display:flex;gap:8px"><button class="btn small" id="pauseGame">Ⅱ PAUSE</button><button class="btn small" id="restartGame">↻ RESTART</button></div></div></div>
+</section>
+<section class="section wrap" id="quiz"><div class="sectionHead"><div><div class="eyebrow">One question. Every day.</div><h2>The Chog knowledge check.</h2></div><p>Daily quiz rotates by date. Correct answers earn +100 XP, saved to your local player profile.</p></div>
+<div class="quizLayout"><div class="quizBox"><div class="quizDate" id="quizDate">DAILY DROP · TODAY</div><h3 id="quizQuestion">Loading today's question…</h3><div class="answers" id="quizAnswers"></div><div class="quizFeedback" id="quizFeedback">One attempt per day on this device. Correct answer = +100 XP.</div></div><div class="feature quizAside"><div><div class="miniIcon">✳</div><h3>Build your Chog IQ</h3><p>Learn the collection, Monad and the ideas behind this project. The quiz is designed as a lightweight daily habit—not a token reward or financial incentive.</p></div><div class="quizPoints"><span id="quizPoints">0</span><small>Quiz points · local profile</small></div><button class="btn" data-goto="leaderboard">VIEW LOCAL LEADERBOARD ↗</button></div></div>
+</section>
+<section class="section wrap" id="nftcheck"><div class="sectionHead"><div><div class="eyebrow">No wallet connection required</div><h2>Check a Chog Genesis NFT.</h2></div><p>Enter any public Monad wallet address. Read-only check: no signature, no transaction, no wallet connection.</p></div>
+<div class="checkerLayout"><div class="checkBox"><h3 style="margin:0 0 7px;font-size:19px">Public address checker</h3><p style="margin:0;color:var(--muted);font-size:12px;line-height:1.8">We query the Chog Genesis ERC-721 contract using a public Monad RPC. This checks NFT ownership, not $CHOG token balance.</p><div class="inputrow"><input id="walletInput" placeholder="0x… enter a public wallet address" spellcheck="false" autocomplete="off"><button class="btn primary" id="checkWallet">CHECK NFT ↗</button></div><div class="statusLine" id="checkStatus">Ready. Paste an address to check ownership.</div><div class="resultBox" id="checkResult"><div class="resultTop"><img class="resultAvatar" src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/896592b1d03260a0c75935d9b36b9a/d7896592b1d03260a0c75935d9b36b9a.webp?w=300" alt="Chog Genesis"><div><h4 id="checkHeadline">Ownership result</h4><p id="checkWalletShort"></p></div></div><div class="statusLine" id="checkDetails"></div></div></div>
+<div class="feature"><div class="miniIcon">◇</div><h3>Why NFT ownership matters here</h3><p>The NFT is the identity layer—not just decoration. A future version can use verified ownership to unlock character skins, unique abilities, challenge variants and seasonal missions. This demo uses a read-only ownership check; it does not grant on-chain rewards.</p><div class="detail"><span>CHOG GENESIS NFT CONTRACT</span><strong class="mono">0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763</strong></div><div class="detail"><span>NETWORK</span><strong>Monad Mainnet · Chain ID 143</strong></div><div class="detail"><span>NO WALLET CONNECT</span><strong>Address input + read-only RPC call</strong></div><a class="btn small" style="display:inline-block;margin-top:8px" href="https://opensea.io/collection/chog-genesis" target="_blank" rel="noreferrer">OPEN COLLECTION ↗</a>
+<div class="characterStrip">
+<div class="characterTile"><img src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/1392f48326f9306d8c366aa2873ed5/6b1392f48326f9306d8c366aa2873ed5.webp?w=300" alt="Chog Genesis collectible"><div><b>GENESIS IDENTITY</b><span>Collection artwork</span></div></div>
+<div class="characterTile"><img src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/eec66549d6686db1b1850a4ae6bac1/7feec66549d6686db1b1850a4ae6bac1.webp?w=300" alt="Chog Genesis collectible"><div><b>CHARACTER VARIANT</b><span>Collection artwork</span></div></div>
+<div class="characterTile"><img src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/896592b1d03260a0c75935d9b36b9a/d7896592b1d03260a0c75935d9b36b9a.webp?w=300" alt="Chog Genesis collectible"><div><b>CHOG COLLECTIBLE</b><span>Collection artwork</span></div></div>
+</div></div></div>
+</section>
+<section class="section wrap" id="leaderboard"><div class="sectionHead"><div><div class="eyebrow">Compete with yourself</div><h2>Leaderboard & player profile.</h2></div><p>Demo leaderboard is device-local. No fake global rankings or invented player data.</p></div><div class="featureGrid"><div class="feature"><div class="miniIcon">♜</div><h3>Local leaderboard</h3><p>Your saved scores across all five game modes, ranked on this device. Connect a backend later to support real global competition.</p><table class="table"><thead><tr><th># / Mode</th><th>Best score</th></tr></thead><tbody id="leaderRows"><tr><td>01 · Rift Defender</td><td>0</td></tr><tr><td>02 · Chog Deep Dive</td><td>0</td></tr><tr><td>03 · Space Odyssey</td><td>0</td></tr><tr><td>04 · World Runner</td><td>0</td></tr><tr><td>05 · Monad Overdrive</td><td>0</td></tr></tbody></table><button class="btn small" id="resetScores" style="margin-top:13px">RESET LOCAL SCORES</button></div></div></section>
+<section class="section wrap" id="about"><div class="sectionHead"><div><div class="eyebrow">Why this project exists</div><h2>Make a Chog NFT playable.</h2></div><p>From static collectible to a character with a reason to return.</p></div>
+<div class="aboutCard" style="width:100%"><h3>Utility that starts with play.</h3><p>Chog Playverse is an independent community prototype exploring how Chog Genesis can become more than a profile picture: the character becomes part of an interactive game world. Players return for skill-based runs, daily Chog knowledge, personal milestones and collection-aware identity.</p><p><b style="color:var(--cream)">Why Chog?</b> Chog's playful, expressive character is a natural fit for a game-first community experience. NFT ownership could eventually support character-specific visuals, unlockable challenge modifiers and collectible progression—without making basic play paywalled.</p><div class="roadmap"><div><b>NOW</b><span>Playable games, daily quiz, read-only NFT checker, local scores and XP.</span></div><div><b>NEXT</b><span>Metadata-based character traits, more missions and polished audio/FX.</span></div><div><b>FUTURE</b><span>Verified global leaderboard, account sync and community events—if a backend is added.</span></div></div><p style="font-size:10px">Independent community prototype. Not an official Chog product or endorsement. XP is a local game-progress score only; no tokens are issued, no prizes are promised, and no on-chain transactions are made.</p></div></section>
+
+<div class="homeSocials" aria-label="Official Chog and creator links">
+  <div class="homeSocialCard official">
+    <div class="homeSocialInfo"><b>OFFICIAL CHOG</b><span>Original project channels</span></div>
+    <div class="homeSocialLinks"><a href="https://x.com/ChogNFT" target="_blank" rel="noreferrer">𝕏 Chog X ↗</a><a href="https://discord.gg/chog" target="_blank" rel="noreferrer">Discord ↗</a></div>
+  </div>
+  <div class="homeSocialCard creator">
+    <div class="homeSocialInfo"><b>CREATOR / BUILDER</b><span>Discord: seyam_14 · Telegram: @Seyam14</span><span class="creatorAddress">EVM: 0x302b46f0D69dfDD92f13419Dbf5d8dD055c57422</span></div>
+    <div class="homeSocialLinks"><a href="https://x.com/zeroo_web3" target="_blank" rel="noreferrer">𝕏 Creator X ↗</a><a href="https://t.me/Seyam14" target="_blank" rel="noreferrer">Telegram ↗</a></div>
+  </div>
+</div>
+<section class="section wrap" id="faq"><div class="sectionHead"><div><div class="eyebrow">Quick answers</div><h2>Questions about Chog Playverse.</h2></div><p>Tap a question to see the answer. Clear details about the Chog focus, NFT checker and what this prototype actually does.</p></div>
+<div class="faqList">
+<div class="faqItem open"><button class="faqQ"><span>What is Chog Playverse?</span><span>+</span></button><div class="faqA">CHOG PLAYVERSE is an independent, community-built arcade concept inspired by Chog Genesis on Monad. It combines three playable game modes, a daily knowledge quiz and a read-only NFT checker in one responsive experience.</div></div>
+<div class="faqItem"><button class="faqQ"><span>Why is Chog Genesis central to the project?</span><span>+</span></button><div class="faqA">The Chog collectible is the visual identity and the starting point for future character utility. A next version could use verified NFT metadata to map traits to skins, optional abilities, special missions and seasonal challenges. This prototype does not yet assign unique in-game abilities to individual token IDs.</div></div>
+<div class="faqItem"><button class="faqQ"><span>Do I need to connect my wallet to play or check an NFT?</span><span>+</span></button><div class="faqA">Wallet connection is optional. You can connect an EVM wallet from the header to show your address and switch to Monad, but the site never requests a signature or transaction. You can also play and check NFT ownership without connecting by pasting a public Monad address. RPC availability can affect the result.</div></div>
+<div class="faqItem"><button class="faqQ"><span>Is the leaderboard global?</span><span>+</span></button><div class="faqA">Not yet. Scores and quiz points are stored in your browser on this device. A real global leaderboard needs a backend, anti-cheat validation and a clear privacy policy. The interface does not fabricate global player rankings.</div></div>
+<div class="faqItem"><button class="faqQ"><span>Does this project issue tokens or promise rewards?</span><span>+</span></button><div class="faqA">No. The demo has no token rewards, NFT mint, paid entry or guaranteed prizes. The token contract link is provided only as a reference and should be verified independently before any trade.</div></div>
+<div class="faqItem"><button class="faqQ"><span>Is Chog Playverse an official Chog product?</span><span>+</span></button><div class="faqA">No. It is an independent fan/community prototype and does not claim official affiliation or endorsement. The official Chog links below are included so visitors can find the original community channels.</div></div>
+<div class="faqItem"><button class="faqQ"><span>How do I earn XP?</span><span>+</span></button><div class="faqA">Earn XP by completing a game run (at least 5 XP, with more based on your score) or by answering the daily quiz correctly (+100 XP). XP is saved in this browser only; it is not a token and has no cash value.</div></div></div></section>
+
+</main>
+<footer class="footer"><div class="wrap footerIn"><span>© CHOG PLAYVERSE · COMMUNITY-BUILT CHOG GENESIS FAN PROJECT</span><span>Built for Monad · Designed for mobile + desktop</span><span>Wallet connection optional. No signature or transaction requested.</span></div></footer>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="modalBox"><div class="modalHead"><h3 id="modalTitle">Player profile</h3><button class="close" id="closeModal">×</button></div><div id="modalBody"></div></div></div>
+<script>
+(()=> {
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const NFT_CA="0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763";
+const TOKEN_CA="0x350035555E10d9AfAF1566AaebfCeD5BA6C27777";
+const RPCS=["https://rpc.monad.xyz","https://monad-mainnet.drpc.org"];
+const defaultState={name:"Chog Rookie",scores:{arena:0,deep:0,space:0,runner:0,race:0},runs:0,xp:0,quizPoints:0,quizDate:"",quizStreak:0};
+let state;try{state={...defaultState,...JSON.parse(localStorage.getItem("chogArcadeV2")||"{}")};state.scores={...defaultState.scores,...(state.scores||{})};state.xp=Number(state.xp)||0}catch(e){state={...defaultState,scores:{...defaultState.scores}}}
+function save(){try{localStorage.setItem("chogArcadeV2",JSON.stringify(state))}catch(e){}updateProfile()}
+let connectedWallet = "";
+const walletButton = $("#connectWallet");
+function shortWallet(a){return a ? a.slice(0,6)+"…"+a.slice(-4) : ""}
+function paintWallet(){
+  if(!walletButton)return;
+  if(connectedWallet){walletButton.textContent=shortWallet(connectedWallet);walletButton.classList.add("connected");walletButton.title="Connected wallet: "+connectedWallet;}
+  else {walletButton.textContent="CONNECT WALLET";walletButton.classList.remove("connected");walletButton.title="Connect an EVM wallet";}
+}
+async function connectWallet(){
+  if(!window.ethereum){toast("No browser wallet found. Open this page in a wallet-enabled browser.");return}
+  try{
+    const accounts=await window.ethereum.request({method:"eth_requestAccounts"});
+    if(!accounts||!accounts.length){toast("Wallet connection was not approved.");return}
+    connectedWallet=accounts[0];
+    const chain=await window.ethereum.request({method:"eth_chainId"});
+    if(parseInt(chain,16)!==143){
+      try{
+        await window.ethereum.request({method:"wallet_switchEthereumChain",params:[{chainId:"0x8f"}]});
+      }catch(switchError){
+        if(switchError&&switchError.code===4902){
+          await window.ethereum.request({method:"wallet_addEthereumChain",params:[{chainId:"0x8f",chainName:"Monad Mainnet",nativeCurrency:{name:"MON",symbol:"MON",decimals:18},rpcUrls:["https://rpc.monad.xyz"],blockExplorerUrls:["https://monadvision.com"]}]});
+        }else{toast("Wallet connected, but switch to Monad to use network-specific features.");}
+      }
+    }
+    paintWallet();toast("Wallet connected. No signature or transaction requested.");
+  }catch(e){toast(e&&e.code===4001?"Wallet connection was rejected.":"Could not connect wallet. Try again.");}
+}
+if(walletButton)walletButton.addEventListener("click",()=>{if(connectedWallet){toast("Connected: "+connectedWallet+" · Use your wallet app to disconnect.");}else connectWallet()});
+if(window.ethereum){
+  window.ethereum.on?.("accountsChanged",accounts=>{connectedWallet=accounts&&accounts.length?accounts[0]:"";paintWallet();});
+  window.ethereum.on?.("chainChanged",()=>{});
+}
+paintWallet();
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),2300)}
+function short(a){return a.slice(0,6)+"…"+a.slice(-4)}
+function navTo(id){const el=$("#"+id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});$("#menu").classList.remove("show");$$("[data-goto]").forEach(b=>b.classList.toggle("active",b.dataset.goto===id));}
+$$("[data-goto]").forEach(b=>b.addEventListener("click",()=>navTo(b.dataset.goto)));
+$("#dots").onclick=()=>$("#menu").classList.toggle("show");
+document.addEventListener("click",e=>{if(!e.target.closest("#dots")&&!e.target.closest("#menu"))$("#menu").classList.remove("show")});
+$("#playTop").onclick=()=>navTo("games");
+$$("[data-modal]").forEach(b=>b.addEventListener("click",()=>openModal(b.dataset.modal)));
+function openModal(kind){$("#menu").classList.remove("show");const body=$("#modalBody");let title="";if(kind==="profile"){title="Player profile";body.innerHTML=`<p>Your progress is stored locally in this browser. Nothing is sent to a server.</p><div class="roadmap"><div style="border-color:#647e45;background:#202b19"><b style="color:var(--lime);font-size:24px">${state.xp}</b><span>TOTAL XP</span></div><div><b>${state.runs}</b><span>Total runs</span></div><div><b>${state.quizPoints}</b><span>Quiz points</span></div></div><p style="font-size:11px">Earn XP by completing games and answering the daily quiz. XP stays saved in this browser.</p><p>Player name: <b style="color:var(--lime)">${escapeHtml(state.name)}</b></p><div class="inputrow"><input id="modalPlayerName" maxlength="22" value="${escapeHtml(state.name)}" placeholder="Choose a player name"><button class="btn primary" id="modalSaveName">SAVE NAME</button></div>`}else if(kind==="trade"){title="Trade CHOG";body.innerHTML=`<p>This button opens a community token-market search. Always verify the token and network before trading.</p><div class="detail"><span>CHOG TOKEN CONTRACT (ERC-20)</span><strong class="mono">${TOKEN_CA}</strong></div><a class="btn primary" href="https://monadvision.com/token/${TOKEN_CA}" target="_blank" rel="noreferrer">VIEW TOKEN ON EXPLORER ↗</a><p style="font-size:10px">Trading is optional and not required to play this game.</p>`}else if(kind==="refer"){title="Refer a friend";const link=location.href.split("#")[0]+"?ref="+encodeURIComponent(state.name.replace(/\s+/g,"-"));body.innerHTML=`<p>Invite a friend to try the arcade. This demo creates a shareable link, but does not track referrals or pay rewards.</p><div class="detail"><span>YOUR SHARE LINK</span><strong class="mono">${escapeHtml(link)}</strong></div><button class="btn primary" id="copyRef">COPY REFERRAL LINK</button>`}$("#modalTitle").textContent=title;$("#modal").classList.add("show");const saveNameBtn=$("#modalSaveName");if(saveNameBtn)saveNameBtn.onclick=()=>{const n=$("#modalPlayerName").value.trim();if(n){state.name=n.slice(0,22);save();toast("Player name saved");openModal("profile")}else toast("Enter a name first")};const c=$("#copyRef");if(c)c.onclick=()=>copyText(location.href.split("#")[0]+"?ref="+encodeURIComponent(state.name.replace(/\s+/g,"-")))}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("#closeModal").onclick=()=>$("#modal").classList.remove("show");$("#modal").onclick=e=>{if(e.target.id==="modal")$("#modal").classList.remove("show")};
+async function copyText(t){try{await navigator.clipboard.writeText(t);toast("Copied to clipboard")}catch(e){const x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();document.execCommand("copy");x.remove();toast("Copied")}}
+if($("#copyCreator"))$("#copyCreator").onclick=()=>copyText("0x302b46f0D69dfDD92f13419Dbf5d8dD055c57422");if($("#copyCreatorCommunity"))$("#copyCreatorCommunity").onclick=()=>copyText("0x302b46f0D69dfDD92f13419Dbf5d8dD055c57422");
+function updateProfile(){const runs=$("#profileRuns"),quiz=$("#profileQuiz"),best=$("#profileBest");if(runs)runs.textContent=state.runs;if(quiz)quiz.textContent=state.quizPoints;if(best)best.textContent=Math.max(...Object.values(state.scores));const rows=$("#leaderRows");if(rows){const labels=[["arena","Rift Defender"],["deep","Chog Deep Dive"],["space","Space Odyssey"],["runner","World Runner"],["race","Monad Overdrive"]];rows.innerHTML=labels.sort((a,b)=>state.scores[b[0]]-state.scores[a[0]]).map((x,i)=>`<tr><td>${String(i+1).padStart(2,"0")} · ${x[1]}</td><td>${state.scores[x[0]]}</td></tr>`).join("")}}
+$("#resetScores").onclick=()=>{if(confirm("Reset all local game scores and run count?")){state.scores={arena:0,deep:0,space:0,runner:0,race:0};state.runs=0;save();toast("Local scores reset")}};updateProfile();
+
+// Daily quiz: stable question for each UTC date; one answer per date per browser.
+const questions=[
+{q:"What makes the Chog Genesis character recognizable in this project?",a:["A playable community identity","A mining algorithm","A bank account","A gas token"],c:0,why:"The character is the visual identity of the experience and can anchor game modes and progression."},
+{q:"Which network is this prototype designed around?",a:["Ethereum Mainnet","Monad","Solana","Bitcoin"],c:1,why:"The prototype uses Monad Mainnet for its read-only NFT ownership query."},
+{q:"What does the NFT checker do?",a:["Moves an NFT","Asks for a seed phrase","Reads NFT balance for a public address","Mints a new NFT"],c:2,why:"It calls the collection's balanceOf method using a public RPC. No signature is required."},
+{q:"What is a meaningful way to use a Chog NFT in a game?",a:["Decorate a page only","Unlock character identity and optional variants","Require payment for every run","Hide all game controls"],c:1,why:"Collection-aware characters, skins and challenge variants can make ownership useful without paywalling the core game."},
+{q:"Which action is needed to play this demo?",a:["Connect a wallet","Sign a transaction","Pay gas","None of these"],c:3,why:"Gameplay is local. The NFT checker is also read-only and does not require wallet connection."},
+{q:"What is the difference between the NFT contract and the CHOG token contract?",a:["They are always the same","An ERC-721 collection tracks NFTs; an ERC-20 tracks fungible tokens","There is no difference","Both are passwords"],c:1,why:"NFT ownership is checked against the Chog Genesis ERC-721 collection contract, not the CHOG fungible-token address."},
+{q:"What can a daily quiz add to a community game?",a:["A reason to return and learn","Guaranteed profit","Automatic token rewards","Free NFT minting"],c:0,why:"A daily knowledge loop can encourage retention without promising financial rewards."}
+];
+function dayKey(){return new Date().toISOString().slice(0,10)}
+function setupQuiz(){const day=dayKey(),seed=Number(day.replaceAll("-",""));const q=questions[(seed*7+Math.floor(seed/13))%questions.length];$("#quizDate").textContent="DAILY DROP · "+new Date().toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});$("#quizQuestion").textContent=q.q;$("#quizAnswers").innerHTML=q.a.map((a,i)=>`<button class="answer" data-answer="${i}">${String.fromCharCode(65+i)}. ${a}</button>`).join("");if(state.quizDate===day){$("#quizFeedback").textContent="Today's answer has already been submitted. Come back tomorrow.";$$(".answer").forEach(b=>{b.disabled=true;if(Number(b.dataset.answer)===q.c)b.classList.add("correct")})}else{$("#quizFeedback").textContent="One attempt per day on this device. Correct answer = +100 XP.";$$(".answer").forEach(b=>b.onclick=()=>{if(state.quizDate===day)return;const ix=Number(b.dataset.answer);$$(".answer").forEach(x=>x.disabled=true);if(ix===q.c){b.classList.add("correct");state.quizPoints+=100;state.xp+=100;state.quizStreak++;$("#quizFeedback").textContent="Correct! +100 XP and +100 quiz points. "+q.why;toast("+100 XP · daily quiz")}else{b.classList.add("wrong");$$(".answer")[q.c].classList.add("correct");$("#quizFeedback").textContent="Not quite. "+q.why;state.quizStreak=0}state.quizDate=day;save();$("#quizPoints").textContent=state.quizPoints})}$("#quizPoints").textContent=state.quizPoints}
+setupQuiz();
+
+// Read-only NFT checker. User-provided 0x350... address is the CHOG ERC-20 token, while Genesis NFT collection is 0xc96...
+function isAddress(a){return /^0x[a-fA-F0-9]{40}$/.test(a)}
+function encodeBalanceOf(addr){return "0x70a08231"+addr.slice(2).toLowerCase().padStart(64,"0")}
+async function rpcCall(method,params){let last;for(const rpc of RPCS){try{const r=await fetch(rpc,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:1,method,params})});if(!r.ok)throw Error("RPC HTTP "+r.status);const j=await r.json();if(j.error)throw Error(j.error.message||"RPC error");return j.result}catch(e){last=e}}throw last||Error("RPC unavailable")}
+$("#checkWallet").onclick=async()=>{const addr=$("#walletInput").value.trim();const st=$("#checkStatus"),res=$("#checkResult"),btn=$("#checkWallet");res.classList.remove("show");if(!isAddress(addr)){st.innerHTML="Enter a valid <strong>0x + 40-character</strong> address.";return}btn.disabled=true;btn.textContent="CHECKING…";st.textContent="Querying Monad Mainnet. This may take a few seconds.";try{const [chain,bal]=await Promise.all([rpcCall("eth_chainId",[]),rpcCall("eth_call",[{to:NFT_CA,data:encodeBalanceOf(addr)},"latest"])]);if(parseInt(chain,16)!==143)throw Error("RPC did not return Monad Mainnet");const count=BigInt(bal||"0x0");$("#checkHeadline").textContent=count>0n?"Chog Genesis holder detected":"No Chog Genesis NFT found";$("#checkWalletShort").textContent=short(addr);$("#checkDetails").innerHTML=count>0n?`This address holds <strong>${count.toString()} Chog Genesis NFT${count===1n?"":"s"}</strong> according to the collection contract.`:"The collection contract returned a balance of <strong>0</strong> for this address.";st.innerHTML=`<strong>✓ Read-only check complete.</strong> No wallet was connected and no transaction was sent.`;res.classList.add("show")}catch(e){st.innerHTML=`<strong style="color:var(--red)">Could not complete check.</strong> ${escapeHtml(e.message||"RPC unavailable")}. Try again or use the explorer link.`}finally{btn.disabled=false;btn.textContent="CHECK NFT ↗"}};
+
+// Canvas games engine.
+const canvas=$("#gameCanvas"),ctx=canvas.getContext("2d");let mode="arena",running=false,paused=false,raf=0,last=0,elapsed=0,score=0,level=1,frame=0,entities=[],bullets=[],particles=[],keys={},player={},lane=1,spawn=0,boost=100,invuln=0,slide=0,jump=0,drag=null;
+const titles={arena:"CHOG: RIFT DEFENDER",race:"MONAD OVERDRIVE",runner:"CHOG: RIFT RUNNER"};
+function resizeCanvas(){/* fixed internal resolution scales crisply through CSS */}window.addEventListener("resize",resizeCanvas);
+function startGame(which){
+mode=which||mode;
+const copy={
+arena:{title:"CHOG: RIFT DEFENDER",heading:"Defend the Rift",body:"Move freely, auto-fire at enemies and collect glowing shards. Enemy waves grow more dangerous over time.",controls:"WASD / arrows to move · auto-fire · collect green shards · avoid enemies."},
+deep:{title:"CHOG: DEEP DIVE",heading:"Dive into the Abyss",body:"Swim between lanes, move up and down to collect pearls, and avoid mines and deep-sea creatures. You have three hearts.",controls:"← → change swim lane · ↑ ↓ swim vertically · collect pearls · avoid mines."},
+space:{title:"CHOG: SPACE ODYSSEY",heading:"Enter Orbit",body:"Steer Chog through an asteroid field, gather cosmic energy and use Space to trigger a boost. You have three shields.",controls:"← → steer · ↑ move faster · Space cosmic boost · avoid asteroids."},
+runner:{title:"CHOG: WORLD RUNNER",heading:"Run the Rift",body:"Race through a shifting 2D world. Switch lanes, jump over blocks, slide under gates and gather fragments.",controls:"← → switch lane · ↑ jump · ↓ slide · collect rift fragments."},
+race:{title:"MONAD OVERDRIVE",heading:"Ignite the Overdrive",body:"Dodge traffic, collect energy cells and boost for extra speed. How long can you keep the run alive?",controls:"← → change lane · hold ↑ to charge speed · Space / ⚡ boost · avoid traffic."}
+};
+const cfg=copy[mode]||copy.arena;
+$("#gamePanel").classList.add("active");
+$("#gamePanel").classList.remove("minimized");
+$("#minimizeGame").textContent="— MINIMIZE";
+$("#gameTitle").textContent=cfg.title;
+$("#gameOverlay").classList.remove("hidden");
+$("#overlayTitle").textContent=cfg.heading;
+$("#overlayText").textContent=cfg.body;
+$("#controlsText").textContent=cfg.controls;
+$("#score").textContent="0";
+$("#best").textContent=state.scores[mode]||0;
+$("#level").textContent="1";
+$("#touchControls").style.display=matchMedia("(max-width:580px)").matches?"flex":"none";
+$("#startGame").textContent="START RUN ↗";
+navTo("games");resetGame();drawScene(0)
+}
+function resetGame(){
+running=false;paused=false;score=0;level=1;frame=0;elapsed=0;entities=[];bullets=[];particles=[];spawn=0;boost=100;invuln=0;slide=0;jump=0;lane=1;
+const laneMode=["deep","space","runner","race"].includes(mode);
+player={x:laneMode?laneX(lane):450,y:mode==="arena"?260:mode==="deep"?360:410,hp:mode==="deep"||mode==="space"?3:100,r:15,hit:0};
+$("#score").textContent="0";$("#level").textContent="1";$("#pauseGame").textContent="Ⅱ PAUSE"
+}
+$$("[data-game]").forEach(b=>b.onclick=()=>startGame(b.dataset.game));
+$$("[data-scroll-games]").forEach(b=>b.addEventListener("click",()=>{const rail=$("#gameRail");if(rail)rail.scrollBy({left:Number(b.dataset.scrollGames)*(rail.clientWidth*.82),behavior:"smooth"})}));
+$("#closeGame").onclick=()=>{running=false;paused=false;cancelAnimationFrame(raf);$("#gamePanel").classList.remove("active","minimized");$("#minimizeGame").textContent="— MINIMIZE";$("#gameOverlay").classList.remove("hidden");$("#startGame").textContent="START RUN ↗"};
+$("#minimizeGame").onclick=()=>{const panel=$("#gamePanel");if(!panel.classList.contains("minimized")){if(running&&!paused){paused=true;cancelAnimationFrame(raf);$("#pauseGame").textContent="▶ RESUME"}$("#gameOverlay").classList.remove("hidden");$("#overlayTitle").textContent="Run paused";$("#overlayText").textContent="Your run is paused. Restore this window and resume when ready.";$("#startGame").textContent="RESUME ↗";panel.classList.add("minimized");$("#minimizeGame").textContent="□ RESTORE"}else{panel.classList.remove("minimized");$("#minimizeGame").textContent="— MINIMIZE";if(paused){$("#gameOverlay").classList.remove("hidden");$("#overlayTitle").textContent="Run paused";$("#startGame").textContent="RESUME ↗"}}};
+$("#fullscreenGame").onclick=async()=>{const el=$("#gamePanel");try{if(!document.fullscreenElement){await el.requestFullscreen();$("#fullscreenGame").textContent="⛶ EXIT FULLSCREEN"}else{await document.exitFullscreen();$("#fullscreenGame").textContent="⛶ FULLSCREEN"}}catch(e){toast("Fullscreen is not supported in this browser")}};
+document.addEventListener("fullscreenchange",()=>{if(!document.fullscreenElement)$("#fullscreenGame").textContent="⛶ FULLSCREEN"});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#gamePanel").classList.contains("active")&&document.fullscreenElement){document.exitFullscreen().catch(()=>{})}});
+$("#startGame").onclick=()=>{if(running&&paused){paused=false;$("#gameOverlay").classList.add("hidden");$("#pauseGame").textContent="Ⅱ PAUSE";last=performance.now();raf=requestAnimationFrame(loop);return}if(!running){resetGame();running=true;paused=false;last=performance.now();$("#gameOverlay").classList.add("hidden");$("#pauseGame").textContent="Ⅱ PAUSE";raf=requestAnimationFrame(loop)}};
+$("#restartGame").onclick=()=>{resetGame();$("#gameOverlay").classList.remove("hidden");$("#overlayTitle").textContent="Ready for another run?";$("#overlayText").textContent="Start when ready. Your personal best is saved after each run.";$("#startGame").textContent="START RUN ↗"};
+$("#pauseGame").onclick=()=>{if(!running)return;paused=!paused;$("#pauseGame").textContent=paused?"▶ RESUME":"Ⅱ PAUSE";if(paused){cancelAnimationFrame(raf);$("#gameOverlay").classList.remove("hidden");$("#overlayTitle").textContent="Run paused";$("#overlayText").textContent="Take a breath. Resume when you're ready.";$("#startGame").textContent="RESUME ↗"}else{$("#gameOverlay").classList.add("hidden");last=performance.now();raf=requestAnimationFrame(loop)}};
+window.addEventListener("keydown",e=>{keys[e.key.toLowerCase()]=true;if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"," "].includes(e.key))e.preventDefault();if(e.key===" "&&mode==="race")boostRace();if(e.key===" "&&mode==="space")boostSpace()});
+window.addEventListener("keyup",e=>keys[e.key.toLowerCase()]=false);
+$$("[data-act]").forEach(b=>{const act=b.dataset.act;b.addEventListener("pointerdown",e=>{e.preventDefault();if(act==="boost"){if(mode==="space")boostSpace();else boostRace()}else keys[({left:"arrowleft",right:"arrowright",up:"arrowup",down:"arrowdown"})[act]]=true});b.addEventListener("pointerup",()=>{if(act!=="boost")keys[({left:"arrowleft",right:"arrowright",up:"arrowup",down:"arrowdown"})[act]]=false});b.addEventListener("pointerleave",()=>{if(act!=="boost")keys[({left:"arrowleft",right:"arrowright",up:"arrowup",down:"arrowdown"})[act]]=false})});
+canvas.addEventListener("pointerdown",e=>{if(!running||paused)return;const r=canvas.getBoundingClientRect();drag={x:(e.clientX-r.left)/r.width*canvas.width,y:(e.clientY-r.top)/r.height*canvas.height,now:performance.now()};canvas.setPointerCapture?.(e.pointerId)});
+canvas.addEventListener("pointermove",e=>{if(!drag||!running||mode!=="arena")return;const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*canvas.width,y=(e.clientY-r.top)/r.height*canvas.height;player.x=Math.max(25,Math.min(875,x));player.y=Math.max(25,Math.min(475,y))});
+canvas.addEventListener("pointerup",e=>{if(drag&&mode!=="arena"){const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*canvas.width;const start=drag.x;if(mode==="race"){if(x<start-15)lane=Math.max(0,lane-1);else if(x>start+15)lane=Math.min(2,lane+1);else boostRace()}else{if(x<start-20)lane=Math.max(0,lane-1);else if(x>start+20)lane=Math.min(2,lane+1);else jump=12}}drag=null});
+function boostRace(){if(mode==="race"&&running&&!paused&&boost>8){boost-=9;score+=8;for(let i=0;i<14;i++)particles.push({x:laneX(lane)+(Math.random()-.5)*40,y:430+Math.random()*35,vx:(Math.random()-.5)*3,vy:2+Math.random()*4,life:25,color:"#75d7ff"})}}
+function laneX(l){return 300+l*150}
+function rand(a,b){return a+Math.random()*(b-a)}
+function addParticle(x,y,color,n=7){for(let i=0;i<n;i++)particles.push({x,y,vx:rand(-3,3),vy:rand(-3,3),life:rand(12,30),color})}
+function spawnEntity(type){
+if(mode==="arena"){
+ const edge=Math.floor(rand(0,4));const p=edge===0?{x:rand(0,900),y:-20}:edge===1?{x:920,y:rand(0,500)}:edge===2?{x:rand(0,900),y:520}:{x:-20,y:rand(0,500)};
+ entities.push({...p,type:type||"enemy",r:type==="shard"?7:rand(12,18),hp:type==="tank"?4:type==="enemy"?1:1,speed:type==="tank"?rand(.5,.9):rand(.8,1.7),phase:rand(0,7)});
+}else if(mode==="deep"){
+ const l=Math.floor(rand(0,3)),t=Math.random()<.27?"pearl":Math.random()<.57?"mine":"jelly";
+ entities.push({x:laneX(l),y:-45,lane:l,type:t,r:t==="pearl"?9:t==="mine"?16:19,speed:rand(2.1,3.8)+elapsed*.009,phase:rand(0,7)});
+}else if(mode==="space"){
+ const l=Math.floor(rand(0,3)),t=Math.random()<.25?"star":Math.random()<.6?"meteor":"drone";
+ entities.push({x:laneX(l),y:-50,lane:l,type:t,r:t==="star"?9:t==="meteor"?rand(15,22):17,speed:rand(2.5,4.4)+elapsed*.012,phase:rand(0,7),rot:rand(0,6)});
+}else if(mode==="race"){
+ const l=Math.floor(rand(0,3));entities.push({x:laneX(l),y:-60,lane:l,type:Math.random()<.18?"cell":"car",r:20,speed:rand(3,5)+elapsed*.012});
+}else{
+ const l=Math.floor(rand(0,3));const types=["block","gate","shard"];const t=types[Math.random()<.18?2:Math.random()<.5?0:1];entities.push({x:laneX(l),y:-35,lane:l,type:t,r:t==="shard"?9:18,speed:4+elapsed*.014})
+}}
+function loop(now){
+if(!running||paused)return;
+const dt=Math.min(2,(now-last)/16.67||1);last=now;elapsed+=dt;frame++;
+if(mode==="arena")updateArena(dt);else if(mode==="race")updateRace(dt);else if(mode==="deep")updateDeep(dt);else if(mode==="space")updateSpace(dt);else updateRunner(dt);
+updateParticles(dt);drawScene(dt);if(running)raf=requestAnimationFrame(loop)
+}
+function updateDeep(dt){
+spawn-=dt;if(spawn<=0){spawn=Math.max(13,34-elapsed*.12);spawnEntity()}
+if(keys.arrowleft||keys.a){if(frame%8===0)lane=Math.max(0,lane-1)}
+if(keys.arrowright||keys.d){if(frame%8===0)lane=Math.min(2,lane+1)}
+const targetY=(keys.arrowup||keys.w)?Math.max(115,player.y-3.3*dt):(keys.arrowdown||keys.s)?Math.min(430,player.y+3.3*dt):360;
+player.x+=(laneX(lane)-player.x)*.18;player.y+=(targetY-player.y)*.15;
+for(const e of entities){
+ e.y+=e.speed*dt;e.x=laneX(e.lane)+Math.sin(elapsed*.035+e.phase)*9;
+ if(e.lane===lane&&Math.abs(e.y-player.y)<e.r+15){
+  if(e.type==="pearl"){score+=45;addParticle(e.x,e.y,"#8ffff0",14);e.dead=true}
+  else if(invuln<=0){player.hp--;invuln=44;addParticle(player.x,player.y,"#ff727d",16);e.dead=true;if(player.hp<=0)endGame()}
+ }}
+entities=entities.filter(e=>!e.dead&&e.y<560);
+if(invuln>0)invuln-=dt;level=1+Math.floor(elapsed/17);score+=.35*dt;
+$("#level").textContent=level;$("#score").textContent=Math.floor(score)
+}
+function boostSpace(){
+if(mode==="space"&&running&&!paused&&boost>7){boost-=8;score+=10;invuln=Math.max(invuln,8);for(let i=0;i<18;i++)particles.push({x:player.x+(Math.random()-.5)*35,y:player.y+18,vx:(Math.random()-.5)*3,vy:rand(1,5),life:rand(15,32),color:"#86cfff"})}
+}
+function updateSpace(dt){
+spawn-=dt;if(spawn<=0){spawn=Math.max(12,31-elapsed*.13);spawnEntity()}
+if(keys.arrowleft||keys.a){if(frame%8===0)lane=Math.max(0,lane-1)}
+if(keys.arrowright||keys.d){if(frame%8===0)lane=Math.min(2,lane+1)}
+if(keys.arrowup||keys.w)boost=Math.max(0,boost-.5*dt);else boost=Math.min(100,boost+.16*dt);
+player.x+=(laneX(lane)-player.x)*.2;player.y=410;
+for(const e of entities){
+ e.y+=(e.speed+(keys.arrowup?1.2:0))*dt;
+ if(e.lane===lane&&Math.abs(e.y-player.y)<e.r+18){
+  if(e.type==="star"){score+=50;boost=Math.min(100,boost+20);addParticle(e.x,e.y,"#f6dd84",13);e.dead=true}
+  else if(invuln<=0){player.hp--;invuln=38;addParticle(player.x,player.y,"#ff7286",15);e.dead=true;if(player.hp<=0)endGame()}
+ }}
+entities=entities.filter(e=>!e.dead&&e.y<560);
+if(invuln>0)invuln-=dt;level=1+Math.floor(elapsed/16);score+=(keys.arrowup?1.1:.45)*dt;
+$("#level").textContent=level;$("#score").textContent=Math.floor(score)
+}
+function updateArena(dt){level=1+Math.floor(elapsed/22);spawn-=dt;if(spawn<=0){spawn=Math.max(12,52-level*3);spawnEntity(Math.random()<Math.min(.32,.08+level*.018)?"tank":"enemy");if(Math.random()<.32)spawnEntity("shard")}
+const speed=3.3+Math.min(1.8,level*.08);if(keys.w||keys.arrowup)player.y-=speed*dt;if(keys.s||keys.arrowdown)player.y+=speed*dt;if(keys.a||keys.arrowleft)player.x-=speed*dt;if(keys.d||keys.arrowright)player.x+=speed*dt;player.x=Math.max(18,Math.min(882,player.x));player.y=Math.max(18,Math.min(482,player.y));
+if(frame%14===0){const enemies=entities.filter(e=>e.type==="enemy"||e.type==="tank");if(enemies.length){let target=enemies.reduce((a,b)=>Math.hypot(a.x-player.x,a.y-player.y)<Math.hypot(b.x-player.x,b.y-player.y)?a:b);const ang=Math.atan2(target.y-player.y,target.x-player.x);bullets.push({x:player.x,y:player.y,vx:Math.cos(ang)*8,vy:Math.sin(ang)*8,life:65})}}
+for(const e of entities){if(e.type==="shard"){e.y+=e.speed*dt*.7; e.x+=Math.sin(elapsed+e.phase)*.5*dt;continue}const a=Math.atan2(player.y-e.y,player.x-e.x);e.x+=Math.cos(a)*e.speed*dt;e.y+=Math.sin(a)*e.speed*dt;if(Math.hypot(e.x-player.x,e.y-player.y)<e.r+player.r&&invuln<=0){player.hp-=e.type==="tank"?18:12;invuln=35;addParticle(player.x,player.y,"#ff6b70",12);if(player.hp<=0)endGame()}}
+for(const b of bullets){b.x+=b.vx*dt;b.y+=b.vy*dt;b.life-=dt;for(const e of entities){if(e.type!=="enemy"&&e.type!=="tank")continue;if(Math.hypot(b.x-e.x,b.y-e.y)<e.r+4){e.hp--;b.life=0;if(e.hp<=0){score+=e.type==="tank"?35:15;addParticle(e.x,e.y,"#ff6b70",9);e.dead=true}}}}
+bullets=bullets.filter(b=>b.life>0&&b.x>-10&&b.x<910&&b.y>-10&&b.y<510);for(const e of entities){if(e.type==="shard"&&Math.hypot(e.x-player.x,e.y-player.y)<e.r+player.r){score+=25;addParticle(e.x,e.y,"#c8ff55",10);e.dead=true}}entities=entities.filter(e=>!e.dead&&e.y<560&&e.x>-60&&e.x<960);if(invuln>0)invuln-=dt;$("#level").textContent=level;score+=.04*dt;$("#score").textContent=Math.floor(score)}
+function updateRace(dt){spawn-=dt;if(spawn<=0){spawn=Math.max(17,42-elapsed*.14);spawnEntity()}if(keys.arrowleft||keys.a){if(frame%8===0)lane=Math.max(0,lane-1)}if(keys.arrowright||keys.d){if(frame%8===0)lane=Math.min(2,lane+1)}if(keys.arrowup&&boost>0)boost=Math.max(0,boost-.8*dt);else boost=Math.min(100,boost+.12*dt);const px=laneX(lane);player.x+=(px-player.x)*.25;player.y=410;player.hp=100;
+for(const e of entities){e.y+=(e.speed+(keys.arrowup?2:0))*dt;if(e.lane===lane&&Math.abs(e.y-410)<28&&e.type==="car"&&invuln<=0){player.hp-=25;invuln=25;addParticle(player.x,410,"#ff6b70",10);e.dead=true;if(player.hp<=0)endGame()}if(e.lane===lane&&Math.abs(e.y-410)<26&&e.type==="cell"){score+=60;boost=Math.min(100,boost+30);addParticle(e.x,e.y,"#75d7ff",12);e.dead=true}}
+entities=entities.filter(e=>!e.dead&&e.y<550);score+=((keys.arrowup?1.7:0.45)*dt);level=1+Math.floor(elapsed/18);$("#level").textContent=level;$("#score").textContent=Math.floor(score)}
+function updateRunner(dt){spawn-=dt;if(spawn<=0){spawn=Math.max(16,37-elapsed*.15);spawnEntity()}if(keys.arrowleft||keys.a){if(frame%9===0)lane=Math.max(0,lane-1)}if(keys.arrowright||keys.d){if(frame%9===0)lane=Math.min(2,lane+1)}if(keys.arrowup&&jump===0)jump=17;if(keys.arrowdown)slide=12;if(jump>0)jump-=dt;if(slide>0)slide-=dt;const px=laneX(lane);player.x+=(px-player.x)*.22;player.y=412;
+for(const e of entities){e.y+=e.speed*dt;if(e.lane===lane&&Math.abs(e.y-412)<26){if(e.type==="shard"){score+=30;addParticle(e.x,e.y,"#c8ff55",9);e.dead=true}else if(invuln<=0){const safe=(e.type==="block"&&jump>5)||(e.type==="gate"&&slide>4);if(!safe){invuln=24;addParticle(player.x,412,"#ff6b70",10);score=Math.max(0,score-20);e.dead=true;if(frame>500&&Math.random()<.2)endGame()}}}}
+entities=entities.filter(e=>!e.dead&&e.y<550);score+=.55*dt;level=1+Math.floor(elapsed/20);$("#level").textContent=level;$("#score").textContent=Math.floor(score);if(invuln>0)invuln-=dt}
+function updateParticles(dt){for(const p of particles){p.x+=p.vx*dt;p.y+=p.vy*dt;p.life-=dt}particles=particles.filter(p=>p.life>0)}
+function drawScene(dt){ctx.clearRect(0,0,900,500);if(mode==="arena")drawArena();else if(mode==="race")drawRace();else if(mode==="deep")drawDeep();else if(mode==="space")drawSpace();else drawRunner();drawParticles()}
+function drawGrid(color="#263323"){ctx.strokeStyle=color;ctx.lineWidth=1;for(let x=0;x<900;x+=45){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,500);ctx.stroke()}for(let y=0;y<500;y+=45){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(900,y);ctx.stroke()}}
+const chogSprites=[new Image(),new Image(),new Image()];
+chogSprites[0].src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/1392f48326f9306d8c366aa2873ed5/6b1392f48326f9306d8c366aa2873ed5.webp?w=500";
+chogSprites[1].src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/eec66549d6686db1b1850a4ae6bac1/7feec66549d6686db1b1850a4ae6bac1.webp?w=500";
+chogSprites[2].src="https://i2c.seadn.io/monad/0xc96d31f8626c6d03fae5dcd3d61e3fb9f4a73763/896592b1d03260a0c75935d9b36b9a/d7896592b1d03260a0c75935d9b36b9a.webp?w=500";
+function drawChog(x,y,r=17){const sprite=chogSprites[mode==="race"||mode==="space"?1:mode==="runner"?2:0];if(sprite&&sprite.complete&&sprite.naturalWidth){ctx.save();ctx.shadowColor=mode==="race"?"#75d7ff":mode==="runner"?"#ff9adf":"#c8ff55";ctx.shadowBlur=13;ctx.beginPath();ctx.roundRect(x-r*1.2,y-r*1.2,r*2.4,r*2.4,7);ctx.clip();ctx.drawImage(sprite,x-r*1.2,y-r*1.2,r*2.4,r*2.4);ctx.restore();ctx.save();ctx.strokeStyle=mode==="race"?"#75d7ff":mode==="runner"?"#ff9adf":"#c8ff55";ctx.lineWidth=2;ctx.beginPath();ctx.roundRect(x-r*1.2,y-r*1.2,r*2.4,r*2.4,7);ctx.stroke();ctx.restore();return}ctx.save();ctx.translate(x,y);ctx.fillStyle="#d4ff7d";ctx.strokeStyle="#10160c";ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-r*.7,-r*.3);ctx.lineTo(-r*1.1,-r*1.35);ctx.lineTo(-r*.1,-r*.9);ctx.quadraticCurveTo(r*.7,-r*1.1,r*1.1,-r*.35);ctx.lineTo(r*1.05,r*.3);ctx.quadraticCurveTo(r*.7,r*1.1,0,r);ctx.quadraticCurveTo(-r*.9,r*.9,-r*.9,r*.2);ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle="#111";ctx.beginPath();ctx.ellipse(-r*.35,-r*.05,r*.15,r*.22,-.2,0,Math.PI*2);ctx.ellipse(r*.35,-r*.05,r*.15,r*.22,.2,0,Math.PI*2);ctx.fill();ctx.strokeStyle="#111";ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(-r*.24,r*.42);ctx.quadraticCurveTo(0,r*.6,r*.24,r*.42);ctx.stroke();ctx.restore()}
+function drawArena(){ctx.fillStyle="#0b110b";ctx.fillRect(0,0,900,500);drawGrid();ctx.strokeStyle="#526b3b";ctx.lineWidth=3;ctx.strokeRect(12,12,876,476);ctx.fillStyle="#bfff5510";ctx.beginPath();ctx.arc(450,250,95,0,Math.PI*2);ctx.fill();ctx.strokeStyle="#c8ff5525";ctx.beginPath();ctx.arc(450,250,95,0,Math.PI*2);ctx.stroke();
+for(const e of entities){if(e.type==="shard"){ctx.save();ctx.translate(e.x,e.y);ctx.rotate(elapsed*.04);ctx.fillStyle="#c8ff55";ctx.shadowColor="#c8ff55";ctx.shadowBlur=14;ctx.beginPath();ctx.moveTo(0,-9);ctx.lineTo(8,0);ctx.lineTo(0,9);ctx.lineTo(-8,0);ctx.closePath();ctx.fill();ctx.restore()}else{ctx.fillStyle=e.type==="tank"?"#ffb45e":"#ff646b";ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=14;ctx.beginPath();ctx.arc(e.x,e.y,e.r,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.fillStyle="#351319";ctx.fillRect(e.x-5,e.y-3,3,3);ctx.fillRect(e.x+3,e.y-3,3,3);if(e.type==="tank"){ctx.strokeStyle="#ffd36b";ctx.lineWidth=2;ctx.beginPath();ctx.arc(e.x,e.y,e.r+4,0,Math.PI*2);ctx.stroke()}}}
+ctx.fillStyle="#baffff";for(const b of bullets){ctx.shadowColor="#c8ff55";ctx.shadowBlur=12;ctx.beginPath();ctx.arc(b.x,b.y,3.5,0,Math.PI*2);ctx.fill()}ctx.shadowBlur=0;drawChog(player.x,player.y,player.r);ctx.fillStyle="#ff6b70";ctx.fillRect(22,24,Math.max(0,player.hp)*1.4,5);ctx.strokeStyle="#50604a";ctx.strokeRect(22,24,140,5);ctx.fillStyle="#a8b5a0";ctx.font="11px system-ui";ctx.fillText("RIFT CORE // HP "+Math.max(0,Math.ceil(player.hp)),22,43)}
+function drawRace(){ctx.fillStyle="#071117";ctx.fillRect(0,0,900,500);const grad=ctx.createLinearGradient(0,0,0,500);grad.addColorStop(0,"#101f29");grad.addColorStop(1,"#091116");ctx.fillStyle=grad;ctx.fillRect(0,0,900,500);ctx.fillStyle="#162a31";ctx.beginPath();ctx.moveTo(180,0);ctx.lineTo(720,0);ctx.lineTo(850,500);ctx.lineTo(50,500);ctx.closePath();ctx.fill();ctx.strokeStyle="#4f9cb4";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(180,0);ctx.lineTo(50,500);ctx.moveTo(720,0);ctx.lineTo(850,500);ctx.stroke();for(let i=0;i<2;i++){const x=330+i*120;for(let y=(frame*7)%90-90;y<500;y+=90){ctx.fillStyle="#6caec0";ctx.fillRect(x,y,4,42)}}for(const e of entities){if(e.type==="cell"){ctx.fillStyle="#75d7ff";ctx.shadowColor="#75d7ff";ctx.shadowBlur=16;ctx.beginPath();ctx.arc(e.x,e.y,9,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}else{ctx.fillStyle="#ff5c69";ctx.beginPath();ctx.roundRect(e.x-19,e.y-25,38,50,8);ctx.fill();ctx.fillStyle="#20212a";ctx.fillRect(e.x-12,e.y-13,24,8);ctx.fillStyle="#ff9da5";ctx.fillRect(e.x-14,e.y+17,8,3);ctx.fillRect(e.x+6,e.y+17,8,3)}}ctx.fillStyle="#75d7ff";ctx.shadowColor="#75d7ff";ctx.shadowBlur=12;ctx.beginPath();ctx.moveTo(player.x,player.y-24);ctx.lineTo(player.x+19,player.y+19);ctx.lineTo(player.x,player.y+11);ctx.lineTo(player.x-19,player.y+19);ctx.closePath();ctx.fill();ctx.shadowBlur=0;ctx.fillStyle="#a9c2c9";ctx.font="12px system-ui";ctx.fillText("BOOST",24,28);ctx.fillStyle="#1e3540";ctx.fillRect(24,38,120,7);ctx.fillStyle="#75d7ff";ctx.fillRect(24,38,120*boost/100,7)}
+function drawDeep(){
+const bg=ctx.createLinearGradient(0,0,0,500);bg.addColorStop(0,"#0c5267");bg.addColorStop(.45,"#073044");bg.addColorStop(1,"#04141f");ctx.fillStyle=bg;ctx.fillRect(0,0,900,500);
+for(let i=0;i<7;i++){const x=75+i*130+Math.sin(elapsed*.012+i)*18;ctx.fillStyle="#72fff0";ctx.globalAlpha=.035+(i%3)*.012;ctx.beginPath();ctx.moveTo(x-25,0);ctx.lineTo(x+35,0);ctx.lineTo(x+100,410);ctx.lineTo(x+20,410);ctx.closePath();ctx.fill()}ctx.globalAlpha=1;
+ctx.strokeStyle="#48c6d455";ctx.lineWidth=2;for(let l=0;l<3;l++){const x=laneX(l);ctx.beginPath();ctx.moveTo(x,35);ctx.lineTo(x,465);ctx.stroke()}
+for(let i=0;i<36;i++){const x=(i*83+Math.sin(elapsed*.02+i)*16)%900,y=(i*47-frame*(.45+(i%3)*.2)+9000)%500;ctx.strokeStyle="#b5fff0";ctx.globalAlpha=.2+(i%4)*.08;ctx.beginPath();ctx.arc(x,y,2+(i%4),0,Math.PI*2);ctx.stroke()}ctx.globalAlpha=1;
+for(let i=0;i<9;i++){const x=i*112+Math.sin(elapsed*.018+i)*18;ctx.strokeStyle="#2fd6a1";ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x,500);ctx.quadraticCurveTo(x-18,450,x+3,410);ctx.quadraticCurveTo(x+19,390,x+13,370);ctx.stroke()}
+for(const e of entities){if(e.type==="pearl"){ctx.save();ctx.shadowColor="#9affef";ctx.shadowBlur=20;const g=ctx.createRadialGradient(e.x-3,e.y-4,1,e.x,e.y,13);g.addColorStop(0,"#ffffff");g.addColorStop(.35,"#bafff2");g.addColorStop(1,"#45b8dc");ctx.fillStyle=g;ctx.beginPath();ctx.arc(e.x,e.y,10+Math.sin(elapsed*.12)*1.5,0,Math.PI*2);ctx.fill();ctx.restore()}else if(e.type==="mine"){ctx.save();ctx.translate(e.x,e.y);ctx.rotate(elapsed*.025);ctx.fillStyle="#ff627d";ctx.shadowColor="#ff4e77";ctx.shadowBlur=15;for(let k=0;k<8;k++){ctx.rotate(Math.PI/4);ctx.fillRect(-3,-23,6,11)}ctx.beginPath();ctx.arc(0,0,13,0,Math.PI*2);ctx.fill();ctx.restore()}else{ctx.save();ctx.translate(e.x,e.y);ctx.fillStyle="#b16eff";ctx.shadowColor="#9e64ff";ctx.shadowBlur=16;ctx.beginPath();ctx.ellipse(0,2,18,13,Math.sin(elapsed*.05)*.2,0,Math.PI*2);ctx.fill();ctx.strokeStyle="#bafff7";ctx.lineWidth=2;for(let t=-1;t<=1;t++){ctx.beginPath();ctx.moveTo(t*7,12);ctx.quadraticCurveTo(t*12+Math.sin(elapsed*.07)*7,22,t*10,29);ctx.stroke()}ctx.restore()}}
+if(invuln>0&&Math.floor(frame/4)%2===0)ctx.globalAlpha=.45;drawChog(player.x,player.y,18);ctx.globalAlpha=1;
+ctx.fillStyle="#b8fff3";ctx.font="bold 12px system-ui";ctx.fillText("OXYGEN / HEARTS",22,25);for(let i=0;i<3;i++){ctx.fillStyle=i<player.hp?"#75f7df":"#224b58";ctx.beginPath();ctx.arc(31+i*22,43,7,0,Math.PI*2);ctx.fill()}ctx.fillStyle="#8fcdd2";ctx.font="11px system-ui";ctx.fillText("PEARLS COLLECTED  //  "+Math.floor(score/45),22,67)
+}
+function drawSpace(){
+const bg=ctx.createLinearGradient(0,0,0,500);bg.addColorStop(0,"#090d26");bg.addColorStop(.55,"#11102f");bg.addColorStop(1,"#050a16");ctx.fillStyle=bg;ctx.fillRect(0,0,900,500);
+const neb=ctx.createRadialGradient(635,115,5,635,115,245);neb.addColorStop(0,"#6842a055");neb.addColorStop(1,"#29134a00");ctx.fillStyle=neb;ctx.fillRect(350,0,550,390);
+for(let i=0;i<105;i++){const speed=.2+(i%5)*.18,x=(i*127+((frame*speed*1.4)%940))%900,y=(i*53)%480;ctx.fillStyle=i%7===0?"#8fdbff":"#e4eaff";ctx.globalAlpha=.25+(i%4)*.18;ctx.fillRect(900-x,y,i%7===0?2:1.5,i%7===0?4:1.5)}ctx.globalAlpha=1;
+ctx.save();ctx.translate(722,108);ctx.rotate(.18);const pg=ctx.createLinearGradient(-45,-45,45,45);pg.addColorStop(0,"#f0b6ff");pg.addColorStop(.55,"#855dd5");pg.addColorStop(1,"#312b78");ctx.fillStyle=pg;ctx.shadowColor="#9f8aff";ctx.shadowBlur=25;ctx.beginPath();ctx.arc(0,0,43,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle="#edbaff99";ctx.lineWidth=8;ctx.beginPath();ctx.ellipse(0,2,66,18,.25,0,Math.PI*2);ctx.stroke();ctx.restore();
+ctx.strokeStyle="#384b80";ctx.lineWidth=2;for(let l=0;l<3;l++){ctx.beginPath();ctx.moveTo(laneX(l),20);ctx.lineTo(laneX(l),480);ctx.stroke()}
+for(const e of entities){if(e.type==="star"){ctx.save();ctx.translate(e.x,e.y);ctx.rotate(elapsed*.035);ctx.fillStyle="#ffe58a";ctx.shadowColor="#ffe58a";ctx.shadowBlur=17;ctx.beginPath();for(let k=0;k<10;k++){const r=k%2?5:12,a=k*Math.PI/5;ctx.lineTo(Math.cos(a)*r,Math.sin(a)*r)}ctx.closePath();ctx.fill();ctx.restore()}else if(e.type==="meteor"){ctx.save();ctx.translate(e.x,e.y);ctx.rotate(.55+elapsed*.012);ctx.fillStyle="#fa866f";ctx.shadowColor="#ff775e";ctx.shadowBlur=14;ctx.beginPath();ctx.moveTo(-15,-13);ctx.lineTo(13,-9);ctx.lineTo(19,5);ctx.lineTo(5,18);ctx.lineTo(-17,8);ctx.closePath();ctx.fill();ctx.strokeStyle="#ffc6a2";ctx.stroke();ctx.restore()}else{ctx.save();ctx.translate(e.x,e.y);ctx.fillStyle="#83a8ff";ctx.shadowColor="#81bbff";ctx.shadowBlur=15;ctx.beginPath();ctx.moveTo(0,-18);ctx.lineTo(19,13);ctx.lineTo(0,7);ctx.lineTo(-19,13);ctx.closePath();ctx.fill();ctx.restore()}}
+ctx.save();if(invuln>0&&Math.floor(frame/4)%2===0)ctx.globalAlpha=.45;ctx.shadowColor="#83cfff";ctx.shadowBlur=24;drawChog(player.x,player.y,18);ctx.restore();
+ctx.fillStyle="#bfd7ff";ctx.font="bold 12px system-ui";ctx.fillText("COSMIC SHIELDS",22,25);for(let i=0;i<3;i++){ctx.fillStyle=i<player.hp?"#87d7ff":"#26304e";ctx.fillRect(22+i*24,36,18,7)}ctx.fillStyle="#94a3d1";ctx.fillText("ENERGY  "+Math.floor(boost)+"%",22,62);ctx.fillStyle="#ffde8c";ctx.fillRect(22,70,Math.max(0,boost)*1.1,3)
+}
+function drawRunner(){ctx.fillStyle="#100b16";ctx.fillRect(0,0,900,500);const g=ctx.createLinearGradient(0,0,0,500);g.addColorStop(0,"#21172c");g.addColorStop(1,"#0c1015");ctx.fillStyle=g;ctx.fillRect(0,0,900,500);ctx.strokeStyle="#4a2e55";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(300,0);ctx.lineTo(300,500);ctx.moveTo(450,0);ctx.lineTo(450,500);ctx.moveTo(600,0);ctx.lineTo(600,500);ctx.stroke();for(let y=(frame*8)%70-70;y<500;y+=70){ctx.fillStyle="#d77cf3";ctx.globalAlpha=.18;ctx.fillRect(165,y,570,2);ctx.globalAlpha=1}for(const e of entities){if(e.type==="shard"){ctx.fillStyle="#c8ff55";ctx.shadowColor="#c8ff55";ctx.shadowBlur=14;ctx.beginPath();ctx.moveTo(e.x,e.y-11);ctx.lineTo(e.x+9,e.y);ctx.lineTo(e.x,e.y+11);ctx.lineTo(e.x-9,e.y);ctx.closePath();ctx.fill();ctx.shadowBlur=0}else{ctx.fillStyle=e.type==="block"?"#ff6b70":"#bb70ed";ctx.shadowColor=ctx.fillStyle;ctx.shadowBlur=12;if(e.type==="block")ctx.fillRect(e.x-18,e.y-18,36,36);else{ctx.fillRect(e.x-31,e.y-9,62,18);ctx.fillStyle="#100b16";ctx.fillRect(e.x-18,e.y-5,36,10)}ctx.shadowBlur=0}}ctx.save();ctx.translate(player.x,player.y-(jump>0?Math.sin((17-jump)/17*Math.PI)*55:0));if(slide>0)ctx.scale(1.35,.6);drawChog(0,0,17);ctx.restore();ctx.fillStyle="#b7a4c3";ctx.font="12px system-ui";ctx.fillText("CHOG FRAGMENTS  //  "+Math.floor(score/30),22,28)}
+function drawParticles(){for(const p of particles){ctx.globalAlpha=Math.max(0,p.life/30);ctx.fillStyle=p.color;ctx.beginPath();ctx.arc(p.x,p.y,2.4,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1}
+function endGame(){if(!running)return;running=false;cancelAnimationFrame(raf);const final=Math.floor(score);const earnedXP=Math.max(5,Math.floor(final/10));state.xp=(Number(state.xp)||0)+earnedXP;state.scores[mode]=Math.max(state.scores[mode]||0,final);state.runs++;save();$("#best").textContent=state.scores[mode];$("#overlayTitle").textContent="Run complete";$("#overlayText").textContent=`Final score: ${final}. You earned +${earnedXP} XP. ${final>=state.scores[mode]?"Personal best saved.":"Keep practicing to beat your best."}`;$("#startGame").textContent="PLAY AGAIN ↗";$("#gameOverlay").classList.remove("hidden");toast("Run complete · +"+earnedXP+" XP · score "+final)}
+// Accessible FAQ accordion: one open item at a time.
+$$(".faqQ").forEach(btn=>btn.addEventListener("click",()=>{const item=btn.closest(".faqItem");const wasOpen=item.classList.contains("open");$$(".faqItem").forEach(x=>x.classList.remove("open"));if(!wasOpen)item.classList.add("open")}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("#modal").classList.remove("show");$("#menu").classList.remove("show")}});
+// initial attractive canvas preview
+mode="arena";resetGame();drawScene(0);
+})();
+</script>
+</body></html>
